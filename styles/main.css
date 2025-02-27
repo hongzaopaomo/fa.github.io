@@ -9,7 +9,6 @@
 @import url('./base/reset.css');      /* CSS重置 */
 @import url('./base/global.css');     /* 全局样式 */
 @import url('./base/shadows.css');    /* 阴影样式 */
-@import url('./base/scrollbar.css');  /* 滚动条样式 */
 
 /* Layout */
 @import url('./layout/grid.css');     /* 网格系统 */
@@ -244,4 +243,27 @@
     .contact-modal__title {
         font-size: 28px;
     }
+}
+
+/* 在文件开头添加 */
+:root {
+    color-scheme: light only;
+    forced-color-adjust: none;
+}
+
+/* 确保所有文本颜色不受系统主题影响 */
+body {
+    background-color: #ffffff !important;
+    color: inherit !important;
+}
+
+/* 强制链接颜色不受系统主题影响 */
+a {
+    color: inherit;
+}
+
+/* 确保输入框背景色为白色 */
+input, textarea, select {
+    background-color: #ffffff !important;
+    color: inherit !important;
 } 

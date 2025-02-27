@@ -172,3 +172,52 @@ document.addEventListener('keydown', (e) => {
         document.body.classList.remove('no-scroll');
     }
 });
+
+// Foundation Numbers Cards Interaction
+function initFoundationNumbersCards() {
+    const cards = document.querySelectorAll('.numbers-card');
+    let activeCard = null;
+
+    // 检测是否为移动设备
+    const isMobile = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+
+    if (isMobile) {
+        // 为每个卡片添加点击事件
+        cards.forEach(card => {
+            card.addEventListener('click', function(e) {
+                // 如果当前卡片已经是激活状态，则取消激活
+                if (this === activeCard) {
+                    this.classList.remove('active');
+                    activeCard = null;
+                    return;
+                }
+
+                // 移除其他卡片的激活状态
+                if (activeCard) {
+                    activeCard.classList.remove('active');
+                }
+
+                // 激活当前卡片
+                this.classList.add('active');
+                activeCard = this;
+            });
+        });
+
+        // 点击页面其他地方时取消卡片激活状态
+        document.addEventListener('click', function(e) {
+            if (!e.target.closest('.numbers-card') && activeCard) {
+                activeCard.classList.remove('active');
+                activeCard = null;
+            }
+        });
+    }
+}
+
+// 初始化所有功能
+function initializeAll() {
+    // ... existing initialization code ...
+    initFoundationNumbersCards();
+}
+
+// 当 DOM 加载完成后初始化
+document.addEventListener('DOMContentLoaded', initializeAll);
