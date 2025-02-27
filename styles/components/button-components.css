@@ -1,0 +1,148 @@
+/* =========================================
+   按钮组件样式集合
+   1. 基础按钮样式
+   2. 主要按钮
+   3. 轮廓按钮
+   4. 图标按钮
+   5. 关闭按钮
+   6. 状态样式
+   7. 响应式适配
+   ========================================= */
+
+/* 1. 基础按钮样式 */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: var(--button-height);
+    padding: 12px 24px;
+    border-radius: var(--border-radius-sm);
+    font-size: var(--font-size-md);
+    font-weight: 500;
+    transition: all var(--transition-normal);
+    cursor: pointer;
+    border: none;
+}
+
+/* 2. 主要按钮 */
+.btn-primary {
+    background-color: var(--color-secondary);
+    color: var(--color-white);
+}
+
+.btn-primary:hover {
+    background-color: var(--color-hover);
+    transform: translateY(-2px);
+}
+
+/* 3. 轮廓按钮 */
+.btn-outline {
+    border: 1px solid var(--color-white);
+    color: var(--color-white);
+    background: transparent;
+}
+
+.btn-outline:hover {
+    background-color: var(--color-white);
+    color: var(--color-primary);
+}
+
+/* 4. 图标按钮 */
+.btn-icon {
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    border-radius: 50%;
+}
+
+/* 5. 关闭按钮 */
+.close-btn {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    width: 32px;
+    height: 32px;
+    border: none;
+    background: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: inherit;
+    z-index: calc(var(--z-index-modal) + 1);
+    transition: transform var(--transition-normal);
+}
+
+.close-btn:hover {
+    transform: rotate(90deg);
+}
+
+/* 关闭按钮变体 */
+.close-btn--light {
+    color: var(--color-white);
+}
+
+.close-btn--dark {
+    color: var(--color-primary);
+}
+
+/* 6. 状态样式 */
+.btn:disabled,
+.btn.disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+.btn.loading {
+    position: relative;
+    color: transparent;
+}
+
+.btn.loading::after {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border: 2px solid var(--color-white);
+    border-radius: 50%;
+    border-top-color: transparent;
+    animation: button-loading 0.8s linear infinite;
+}
+
+/* 7. 响应式适配 */
+@media (max-width: 768px) {
+    .btn {
+        height: 40px;
+        padding: 8px 16px;
+        font-size: var(--font-size-sm);
+    }
+
+    .close-btn {
+        top: 16px;
+        right: 16px;
+        width: 28px;
+        height: 28px;
+        font-size: 20px;
+    }
+}
+
+/* 动画 */
+@keyframes button-loading {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* 工具类 */
+.btn-block {
+    width: 100%;
+    display: flex;
+}
+
+.btn-group {
+    display: flex;
+    gap: var(--spacing-sm);
+}
+
+.btn-group--vertical {
+    flex-direction: column;
+} 

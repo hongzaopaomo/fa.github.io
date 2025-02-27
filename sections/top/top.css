@@ -1,0 +1,174 @@
+/* 顶部区域样式 */
+.navbar-section {
+    width: 100%;
+    height: auto;
+    position: relative;
+    z-index: 99999;
+    padding: 0;
+    margin: 0;
+    display: block;
+    background-color: var(--color-primary);
+}
+
+/* 顶部区域 */
+.navbar__header {
+    width: 100%;
+    height: 152px;
+    padding: 18px 50px;
+    background-color: var(--color-primary);
+    position: relative;
+    margin: 0;
+}
+
+.navbar__top-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    max-width: 100%;
+}
+
+/* Logo样式 */
+.logo {
+    display: flex;
+    align-items: center;
+    margin: 0;
+}
+
+.logo__img {
+    height: 60px;
+    width: auto;
+    min-width: 40px;
+}
+
+/* 汉堡菜单按钮 */
+.menu-btn {
+    border: none;
+    background: none;
+    padding: var(--spacing-sm);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-background);
+    font-size: var(--font-size-xl);
+    transition: transform 0.3s ease;
+}
+
+.menu-btn:hover {
+    transform: scale(1.1);
+}
+
+/* 侧边菜单 */
+.side-menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 300px;
+    height: 100vh;
+    background-color: var(--color-primary);
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    z-index: 100000;
+    padding: var(--spacing-xxl) var(--spacing-xl);
+}
+
+.side-menu.active {
+    transform: translateX(0);
+}
+
+/* 关闭按钮 */
+.side-menu__close {
+    position: absolute;
+    top: var(--spacing-lg);
+    right: var(--spacing-lg);
+    border: none;
+    background: none;
+    color: var(--color-white);
+    font-size: var(--font-size-xl);
+    cursor: pointer;
+    padding: var(--spacing-sm);
+}
+
+/* 侧边菜单链接 */
+.side-menu__links {
+    margin-top: var(--spacing-xxl);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+}
+
+.side-menu__link {
+    color: var(--color-white);
+    text-decoration: none;
+    font-size: var(--font-size-lg);
+    padding: var(--spacing-sm) 0;
+    transition: color 0.3s ease;
+}
+
+.side-menu__link:hover {
+    color: var(--color-secondary);
+}
+
+/* 遮罩层 */
+.menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 99999;
+}
+
+.menu-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* 移动端适配 */
+@media (max-width: 768px) {
+    .navbar__header {
+        height: 90px;
+        padding: 12px 20px;
+    }
+
+    .logo__img {
+        height: 32px;
+        min-width: 24px;
+    }
+
+    .side-menu {
+        width: 100%;
+        transform: translateY(-100%);
+    }
+
+    .side-menu.active {
+        transform: translateY(0);
+    }
+
+    .menu-btn {
+        font-size: var(--font-size-lg);
+        padding: var(--spacing-xs);
+    }
+}
+
+/* 小屏幕手机适配 */
+@media (max-width: 480px) {
+    .navbar__header {
+        height: 70px;
+        padding: 10px 15px;
+    }
+
+    .logo__img {
+        height: 28px;
+        min-width: 20px;
+    }
+
+    .menu-btn {
+        font-size: var(--font-size-md);
+    }
+} 

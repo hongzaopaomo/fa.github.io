@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- 视口设置，确保响应式设计正常工作 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO描述 -->
+    <meta name="description" content="Foundation for African Agricultural Innovation and Development">
+    
+    <!-- 添加正确的MIME类型 -->
+    <meta http-equiv="Content-Type" content="text/css; charset=UTF-8">
+    
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" type="text/css" href="styles/main.css">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">  <!-- 图标库 -->
+    
+    <title>FAAID - Foundation for African Agricultural Innovation and Development</title>
+</head>
+<body>
+    <!-- =========================================
+         FAAID 主页面
+         1. 头部区域
+            - Meta信息
+            - 样式链接
+            - 脚本引用
+         2. 导航区域
+            - 顶部导航
+            - 链接导航
+         3. 主要内容
+            - Hero部分
+            - About部分
+            - Focus Areas部分
+            - Latest News部分
+         4. 底部区域
+            - 订阅区域
+            - 版权信息
+         5. 弹窗组件
+            - 项目详情
+            - 新闻详情
+            - Board成员
+         ========================================= -->
+    <!-- 导航区域 -->
+    <section class="navbar-section">
+        <div class="navbar__header">
+            <div class="navbar__top-content">
+                <div class="logo">
+                    <img src="images/logo/logo.png" alt="Logo" class="logo__img">
+                </div>
+                <button class="menu-btn" aria-label="Open Menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 导航链接 -->
+    <section class="nav-links-section">
+        <nav class="nav-links__container">
+            <a href="#about-section" class="nav-links__link">About Us</a>
+            <a href="#partners" class="nav-links__link">Partners</a>
+            <a href="#focus-areas" class="nav-links__link">Projects</a>
+            <a href="#latest-news-section" class="nav-links__link">Latest News</a>
+            <a href="#foundation-numbers-section" class="nav-links__link">Our Foundation Numbers</a>
+        </nav>
+    </section>
+
+    <!-- 移动端当前section指示器 -->
+    <div class="current-section-indicator">
+        <span class="current-section-indicator__text">About Us</span>
+    </div>
+
+    <!-- 侧边菜单 -->
+    <div class="side-menu">
+        <button class="side-menu__close" aria-label="Close Menu">
+            <i class="fas fa-times"></i>
+        </button>
+        <nav class="side-menu__links">
+            <a href="#about-section" class="side-menu__link">About Us</a>
+            <a href="#partners-section" class="side-menu__link">Partners</a>
+            <a href="#focus-areas-section" class="side-menu__link">Projects</a>
+            <a href="#latest-news-section" class="side-menu__link">Latest News</a>
+            <a href="#foundation-numbers-section" class="side-menu__link">Our Foundation Numbers</a>
+        </nav>
+    </div>
+
+    <!-- 遮罩层 -->
+    <div class="menu-overlay"></div>
+
+    <!-- 主要区域 -->
+    <div class="hero__main">
+        <!-- 背景轮播 -->
+        <div class="hero__background">
+            <div class="hero__slider">
+                <div class="hero__slider-track">
+                    <!-- 第一组图片 -->
+                    <img src="images/hero/silde1.jpg" alt="Agricultural Innovation" class="hero__slider-img">
+                    <img src="images/hero/silde2.jpg" alt="Sustainable Farming" class="hero__slider-img">
+                    <img src="images/hero/silde3.jpg" alt="Community Development" class="hero__slider-img">
+                    <!-- 复制第一组图片实现无缝衔接 -->
+                    <img src="images/hero/silde1.jpg" alt="Agricultural Innovation" class="hero__slider-img">
+                    <img src="images/hero/silde2.jpg" alt="Sustainable Farming" class="hero__slider-img">
+                    <img src="images/hero/silde3.jpg" alt="Community Development" class="hero__slider-img">
+                </div>
+            </div>
+        </div>
+        
+        <!-- 遮罩层 -->
+        <div class="overlay overlay--dark"></div>
+        
+        <!-- 内容区域 -->
+        <div class="hero__content">
+            <h1 class="hero__title">
+                <span class="hero__title-line">We drive the modernization </span>
+                <span class="hero__title-line">of African agriculture</span>
+                <span class="hero__title-line">through technology.</span>
+            </h1>
+            <div class="hero__buttons">
+                <a href="#contact" class="btn btn-primary">Contact Us</a>
+                <a href="#focus-areas" class="btn btn-outline">Our Solutions</a>
+            </div>
+        </div>
+    </div>
+</section> 
+
+<main>
+    <!-- About部分 -->
+    <section class="about-section" id="about-section">
+        <!-- 顶部标题区域 -->
+        <div class="section-header">
+            <h2 class="section-title">about us</h2>
+        </div>
+    
+        <!-- 图片展示区域 -->
+        <div class="about__gallery">
+            <div class="about__gallery-track">
+                <!-- 第一组图片 -->
+                <img src="images/about/gallery1.jpg" alt="Team working in agricultural field" class="about__gallery-img">
+                <img src="images/about/gallery2.jpg" alt="Digital farming technology demonstration" class="about__gallery-img">
+                <img src="images/about/gallery3.jpg" alt="Farmers training session" class="about__gallery-img">
+                <img src="images/about/gallery4.jpg" alt="Agricultural innovation showcase" class="about__gallery-img">
+                <img src="images/about/gallery5.jpg" alt="Community farming project" class="about__gallery-img">
+                <img src="images/about/gallery6.jpg" alt="Sustainable agriculture practices" class="about__gallery-img">
+                <img src="images/about/gallery7.jpg" alt="Agricultural research facility" class="about__gallery-img">
+                <img src="images/about/gallery8.jpg" alt="Smart farming solutions" class="about__gallery-img">
+                <img src="images/about/gallery9.jpg" alt="Rural development program" class="about__gallery-img">
+                <img src="images/about/gallery10.jpg" alt="Agricultural education workshop" class="about__gallery-img">
+                <img src="images/about/gallery11.jpg" alt="Technology in agriculture" class="about__gallery-img">
+                <img src="images/about/gallery12.jpg" alt="Farmer empowerment program" class="about__gallery-img">
+                <img src="images/about/gallery13.jpg" alt="Agricultural data analysis" class="about__gallery-img">
+                <img src="images/about/gallery14.jpg" alt="Community engagement" class="about__gallery-img">
+                <img src="images/about/gallery15.jpg" alt="Agricultural innovation lab" class="about__gallery-img">
+                <!-- 复制第一组图片实现无缝衔接 -->
+                <img src="images/about/gallery1.jpg" alt="Team working in agricultural field" class="about__gallery-img">
+                <img src="images/about/gallery2.jpg" alt="Digital farming technology demonstration" class="about__gallery-img">
+                <img src="images/about/gallery3.jpg" alt="Farmers training session" class="about__gallery-img">
+                <img src="images/about/gallery4.jpg" alt="Agricultural innovation showcase" class="about__gallery-img">
+                <img src="images/about/gallery5.jpg" alt="Community farming project" class="about__gallery-img">
+                <img src="images/about/gallery6.jpg" alt="Sustainable agriculture practices" class="about__gallery-img">
+                <img src="images/about/gallery7.jpg" alt="Agricultural research facility" class="about__gallery-img">
+                <img src="images/about/gallery8.jpg" alt="Smart farming solutions" class="about__gallery-img">
+                <img src="images/about/gallery9.jpg" alt="Rural development program" class="about__gallery-img">
+                <img src="images/about/gallery10.jpg" alt="Agricultural education workshop" class="about__gallery-img">
+                <img src="images/about/gallery11.jpg" alt="Technology in agriculture" class="about__gallery-img">
+                <img src="images/about/gallery12.jpg" alt="Farmer empowerment program" class="about__gallery-img">
+                <img src="images/about/gallery13.jpg" alt="Agricultural data analysis" class="about__gallery-img">
+                <img src="images/about/gallery14.jpg" alt="Community engagement" class="about__gallery-img">
+                <img src="images/about/gallery15.jpg" alt="Agricultural innovation lab" class="about__gallery-img">
+            </div>
+        </div>
+    
+        <!-- 文字介绍区域 -->
+        <div class="about__content">
+            <p class="about__text about__text--large">Our Mission: enhance productivity, promote environmental conservation, and unlock global market opportunities for Nigerian farmers by integrating cutting-edge technology, sustainable practices, and inclusive financial models, with a focus on the cocoa and cassava value chains.</p>
+            <p class="about__text">FAAID, with 20 years of cross-industry experience in finance, manufacturing, and resources, leverages strategic partnerships with leading Chinese agricultural companies, research institutions, and global industry alliances to empower Nigerian agriculture.</p>
+        </div>
+    </section> 
+    
+    
+    <!-- Partners Section -->
+    <section class="partners-section" id="partners">
+        <div class="section-header">
+                <h2 class="section-title">Partners</h2>
+        </div>
+            
+        <div class="partners-showcase">
+            <div class="partners-showcase__container">
+                <!-- Partner logos with official website links -->
+                <a href="https://fmard.gov.ng" class="partner__link" target="_blank" rel="noopener noreferrer">
+                    <img src="images/partners/FMARD.jpg" alt="Federal Ministry of Agriculture and Rural Development" class="partner__logo">
+                </a>
+                <a href="https://cocoaassociationofnigeria.com/" class="partner__link" target="_blank" rel="noopener noreferrer">
+                    <img src="images/partners/CAN.jpg" alt="Cocoa Association of Nigeria" class="partner__logo">
+                </a>
+                <a href="https://ncga.com.ng/" class="partner__link" target="_blank" rel="noopener noreferrer">
+                    <img src="images/partners/NCGA.jpg" alt="Nigeria Cassava Growers Association" class="partner__logo">
+                </a>
+                <a href="https://hongzaopaomo.github.io/AIEA/" class="partner__link" target="_blank" rel="noopener noreferrer">
+                    <img src="images/partners/AIEA.jpg" alt="Agricultural Innovation and Extension Alliance" class="partner__logo">
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Projects区域 -->
+    <section class="focus-areas-section" id="focus-areas">
+        <div class="section-header">
+            <h2 class="section-title">Projects</h2>
+        </div>
+
+        <div class="focus-areas__projects">
+            <!-- Agritech Block -->
+            <div class="project-block agritech">
+                <div class="block-header">
+                    <div class="block-header__content">
+                        <h3 class="block-header__title">Agritech Solutions</h3>
+                        <p class="block-header__description">Smart agriculture leverages technologies such as IoT, big data, and artificial intelligence to intelligently manage agricultural production, improving efficiency, optimizing resource use, and enhancing sustainability.</p>
+                    </div>
+                </div>
+
+                <div class="cards-container">
+                    <div class="agritech-card">
+                        <div class="agritech-card__content">
+                            <div>
+                                <h4 class="agritech-card__title">Improving Crop Quality & Yield</h4>
+                                <h5 class="agritech-card__subtitle">Smart monitoring technology optimizes water and fertilizer management, increasing agricultural profitability.</h5>
+                                <p class="agritech-card__description">Smart agriculture leverages intelligent monitoring technology to optimize water and fertilizer management, ensuring crops grow under ideal conditions. IoT sensors continuously track soil moisture, nutrient levels, and environmental data, while AI-powered analytics adjust irrigation and fertilization strategies in real-time to minimize waste and maximize yield. Additionally, drone inspections and pest warning systems enable early detection of crop issues, reducing losses. These innovations significantly enhance product quality and increase agricultural profitability.</p>
+                            </div>
+                            <a href="#" class="learn-more-btn">Learn more</a>
+                        </div>
+                        <img src="images/focus-areas/agritech/agritech1.jpg" alt="Precision Farming" class="agritech-card__image">
+                    </div>
+
+                    <div class="agritech-card">
+                        <div class="agritech-card__content">
+                            <div>
+                                <h4 class="agritech-card__title">Promoting Sustainable Development </h4>
+                                <h5 class="agritech-card__subtitle">Reduce pesticide use, conserve water resources, and support eco-friendly farming practices.</h5>
+                                <p class="agritech-card__description">Smart agriculture is not only about boosting yields but also about fostering eco-friendly and sustainable growth. Precision fertilization and smart irrigation systems help reduce excessive use of chemical fertilizers and water waste, while biological pest control and AI-powered pest detection minimize pesticide usage, protecting soil and water health. Moreover, the promotion of regenerative farming practices, such as crop rotation and organic cultivation, improves soil fertility and ensures long-term agricultural sustainability. These strategies contribute to a healthier environment and a more resilient agricultural system.</p>
+                            </div>
+                            <a href="#" class="learn-more-btn">Learn more</a>
+                        </div>
+                        <img src="images/focus-areas/agritech/agritech2.jpg" alt="Smart Agricultural Machinery" class="agritech-card__image">
+                    </div>
+
+                    <div class="agritech-card">
+                        <div class="agritech-card__content">
+                            <div>
+                                <h4 class="agritech-card__title">Boosting Employment & Economic Growth </h4>
+                                <h5 class="agritech-card__subtitle">Create direct job opportunities, strengthen the agricultural value chain, and enhance export competitiveness.</h5>
+                                <p class="agritech-card__description">The adoption of smart agriculture not only enhances efficiency but also creates new job opportunities. The shift towards digital and technology-driven agriculture generates demand for skilled workers in areas such as smart machinery operation, data analysis, and agricultural e-commerce. Additionally, smart agriculture upgrades the agricultural supply chain, stimulating growth in processing, logistics, and exports, which strengthens the overall agricultural economy. By modernizing management practices and expanding global market access, African agricultural products are becoming more competitive, contributing to economic development and long-term prosperity.</p>
+                            </div>
+                            <a href="#" class="learn-more-btn">Learn more</a>
+                        </div>
+                        <img src="images/focus-areas/agritech/agritech3.jpg" alt="Smart Agricultural Machinery" class="agritech-card__image">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Agriedu Block -->
+            <div class="project-block agriedu">
+                <div class="block-header">
+                    <div class="block-header__content">
+                        <h3 class="block-header__title">Agricultural Education</h3>
+                        <p class="block-header__description">Empowering farmers through comprehensive education programs, digital skills training, and youth engagement initiatives to build a sustainable agricultural future.</p>
+                    </div>
+                </div>
+
+                <div class="cards-container">
+                    <div class="agriedu-card">
+                        <div class="agriedu-card__content">
+                            <div>
+                                <h4 class="agriedu-card__title">Farmer Training Program</h4>
+                                <h5 class="agriedu-card__subtitle">Enhance agricultural productivity by equipping farmers with modern techniques, sustainable farming methods, and business strategies.</h5>
+                                <p class="agriedu-card__description">The Farmer Training Program provides comprehensive training in sustainable farming practices (organic farming, soil health management, water conservation), modern agricultural machinery operation and maintenance, crop rotation & pest control best practices, and agricultural processing & market strategies. Our blended learning approach combines classroom instruction with field practice, supported by expert teams and cooperative development initiatives.</p>
+                            </div>
+                            <a href="#" class="learn-more-btn">Learn more</a>
+                        </div>
+                        <img src="images/focus-areas/education/agriedu1.jpg" alt="Farmer Training Program" class="agriedu-card__image">
+                    </div>
+
+                    <div class="agriedu-card">
+                        <div class="agriedu-card__content">
+                            <div>
+                                <h4 class="agriedu-card__title">Digital Skills Workshop</h4>
+                                <h5 class="agriedu-card__subtitle">Empowering farmers and youth with essential digital tools and knowledge for smarter farming and market expansion.</h5>
+                                <p class="agriedu-card__description">Our Digital Skills Workshop covers smart farming & data management (drone mapping, precision irrigation, digital monitoring), e-commerce & online sales strategies, digital finance & agricultural loans, and basic computer skills. Through tech-enabled learning facilities and corporate partnerships, we offer flexible training options both online and offline to ensure accessibility.</p>
+                            </div>
+                            <a href="#" class="learn-more-btn">Learn more</a>
+                        </div>
+                        <img src="images/focus-areas/education/agriedu2.jpg" alt="Digital Skills Workshop" class="agriedu-card__image">
+                    </div>
+
+                    <div class="agriedu-card">
+                        <div class="agriedu-card__content">
+                            <div>
+                                <h4 class="agriedu-card__title">Youth in Agriculture</h4>
+                                <h5 class="agriedu-card__subtitle">Attracting and equipping young people with skills and resources to build sustainable careers in agriculture.</h5>
+                                <p class="agriedu-card__description">The Youth in Agriculture Program focuses on agricultural entrepreneurship, smart agriculture & emerging technologies, supply chain & market integration, and policy & financial support. Through agricultural startup hubs, innovation challenges, and university collaborations, we provide comprehensive support for young people to develop successful careers in modern agriculture.</p>
+                            </div>
+                            <a href="#" class="learn-more-btn">Learn more</a>
+                        </div>
+                        <img src="images/focus-areas/education/agriedu3.jpg" alt="Youth in Agriculture" class="agriedu-card__image">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> 
+
+
+    <!-- Latest News部分 -->
+    <section id="latest-news-section" class="latest-news-section">
+        <div class="section-header">
+            <h2 class="section-title">Latest News</h2>
+        </div>
+
+        <div class="latest-news__main">
+            <!-- 主要新闻 -->
+            <div class="latest-news__featured">
+                <div class="image-card">
+                    <img src="images/news/news1.jpg" alt="News 1" class="image-card__img">
+                    <div class="image-card__content">
+                        <h3 class="image-card__title">AGCO Agriculture Foundation Launches Call for Applications for Grant Cycle</h3>
+                        <p class="image-card__summary">The AGCO Agriculture Foundation announces its latest grant cycle, focusing on sustainable farming practices and technological innovation in African agriculture. This initiative aims to support projects that enhance food security and agricultural productivity across the continent.</p>
+                        <span class="image-card__date">Oct. 1, 2024</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 其他新闻列表 -->
+            <div class="latest-news__list">
+                <!-- 其他新闻卡片 -->
+                <div class="image-card image-card--horizontal">
+                    <img src="images/news/news2.jpg" alt="News 2" class="image-card__img">
+                    <div class="image-card__content">
+                        <h3 class="image-card__title">Sustainable Agriculture Initiative Expands to New Regions</h3>
+                        <p class="image-card__summary">The sustainable agriculture program has successfully expanded to five new regions, bringing innovative farming practices and support to local communities.</p>
+                        <span class="image-card__date">Sep. 28, 2024</span>
+                    </div>
+                </div>
+
+                <div class="image-card image-card--horizontal">
+                    <img src="images/news/news3.jpg" alt="News 3" class="image-card__img">
+                    <div class="image-card__content">
+                        <h3 class="image-card__title">Digital Innovation in Agriculture: A New Partnership</h3>
+                        <p class="image-card__summary">A groundbreaking partnership between tech firms and agricultural organizations promises to revolutionize farming practices through digital innovation.</p>
+                        <span class="image-card__date">Sep. 25, 2024</span>
+                    </div>
+                </div>
+
+                <div class="image-card image-card--horizontal">
+                    <img src="images/news/news4.jpg" alt="News 4" class="image-card__img">
+                    <div class="image-card__content">
+                        <h3 class="image-card__title">Youth in Agriculture: New Training Program Launched</h3>
+                        <p class="image-card__summary">An innovative training program targeting young farmers has been launched, focusing on modern agricultural techniques and sustainable farming practices.</p>
+                        <span class="image-card__date">Sep. 20, 2024</span>
+                    </div>
+                </div>
+
+                <div class="image-card image-card--horizontal">
+                    <img src="images/news/news5.jpg" alt="News 5" class="image-card__img">
+                    <div class="image-card__content">
+                        <h3 class="image-card__title">Agricultural Technology Summit 2024: Key Takeaways</h3>
+                        <p class="image-card__summary">The recent Agricultural Technology Summit brought together industry leaders to discuss the future of farming, highlighting key innovations and trends.</p>
+                        <span class="image-card__date">Sep. 15, 2024</span>
+                    </div>
+                </div>
+
+                <div class="image-card image-card--horizontal">
+                    <img src="images/news/news6.jpg" alt="News 6" class="image-card__img">
+                    <div class="image-card__content">
+                        <h3 class="image-card__title">Sustainable Farming Practices: Research Results Released</h3>
+                        <p class="image-card__summary">New research findings demonstrate the positive impact of sustainable farming practices on crop yields and environmental conservation.</p>
+                        <span class="image-card__date">Sep. 10, 2024</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <div>
+</section>
+
+<!-- Foundation Numbers部分 -->
+<section class="foundation-numbers-section" id="foundation-numbers-section">
+    <!-- 顶部标题区域 -->
+    <div class="section-header">
+        <h2 class="section-title">Foundation Numbers</h2>
+    </div>
+    
+    <!-- 主要区域 -->
+    <div class="foundation-numbers__main">
+        <!-- 左侧卡片 -->
+        <div class="numbers-card">
+            <h3 class="numbers-card__title">Farmers Income</h3>
+            <div class="numbers-card__value">40%</div>
+        </div>
+        
+        <div class="numbers-card">
+            <h3 class="numbers-card__title">Farmers Trained</h3>
+            <div class="numbers-card__value">25K+</div>
+        </div>
+
+        <!-- 中间大卡片 -->
+        <div class="numbers-card numbers-card--large">
+            <h3 class="numbers-card__title">Total Investment</h3>
+            <div class="numbers-card__value">$50M+</div>
+            <div class="numbers-card__icons">
+                <div class="grain-icon">
+                    <img src="images/icons/corn.svg" alt="Corn">
+                    <span>cocoa</span>
+                </div>
+                <div class="grain-icon">
+                    <img src="images/icons/wheat.svg" alt="Wheat">
+                    <span>cassava</span>
+                </div>
+                <div class="grain-icon">
+                    <img src="images/icons/rice.svg" alt="Rice">
+                    <span>Plantain</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 右侧卡片 -->
+        <div class="numbers-card">
+            <h3 class="numbers-card__title">Employment opportunities</h3>
+            <div class="numbers-card__value">10K+</div>
+        </div>
+        
+        <div class="numbers-card">
+            <h3 class="numbers-card__title">Sustainable land</h3>
+            <div class="numbers-card__value">250km²</div>
+        </div>
+    </div>
+</section>
+
+</main>
+
+<!-- Footer部分 -->
+<footer class="footer-section">
+    <!-- 顶部订阅区域 -->
+    <div class="footer__top">
+        <div class="footer__subscribe">
+            <h2 class="footer__subscribe-title">Subscribe to our newsletter</h2>
+            <div class="footer__subscribe-form">
+                <div class="footer__input-group">
+                    <div class="input-group">
+                        <input type="email" id="email" placeholder="Enter your email">
+                        <button class="btn-primary">Subscribe ↗</button>
+                    </div>
+                </div>
+                <p class="footer__subscribe-text">
+                    Receive all the latest on faaid solutions and benefits straight to your inbox.
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 底部版权信息 -->
+    <div class="footer__bottom">
+        <div class="footer__bottom-left">
+            <span>© 2024 faaid By Foundation for African Agritech Inclusive Development Limited. All rights reserved.</span>
+        </div>
+    </div>
+</footer>
+
+<!-- 返回顶部按钮 -->
+<button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <i class="fas fa-arrow-up"></i>
+</button>
+
+<!-- JavaScript Modules -->
+<script type="module" src="js/main.js"></script>
+
+<!-- Contact Modal -->
+<div class="contact-modal" id="contactModal">
+    <div class="contact-modal__content">
+        <!-- Top Section -->
+        <div class="contact-modal__top">
+            <img src="images/logo/Group 7.png" alt="FAAID Logo" class="contact-modal__logo-img">
+            <button class="contact-modal__close" aria-label="Close Contact Modal">×</button>
+        </div>
+        
+        <!-- Middle Section -->
+        <div class="contact-modal__middle">
+            <h3 class="contact-modal__title">contact us</h3>
+            <p class="contact-modal__text">We'd love to hear from you! Reach out to us at:</p>
+            <div class="contact-modal__email-container">
+                <span class="contact-modal__email">contact@faaid.org</span>
+                <button class="contact-modal__copy-btn" data-email="contact@faaid.org">copy!</button>
+            </div>
+        </div>
+        
+        <!-- Bottom Section -->
+        <a href="mailto:contact@faaid.org" class="contact-modal__send-btn">Send Email Now</a>
+    </div>
+</div>
+
+<script>
+// 更新 hero section 中的 Contact Us 按钮链接
+document.querySelector('.hero__buttons .btn-primary').setAttribute('href', '#contact');
+</script>
+</body>
+
+</html>

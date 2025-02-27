@@ -1,0 +1,70 @@
+/* 全局滚动行为 */
+html {
+    scroll-behavior: smooth;
+}
+
+/* 全局图片处理 */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* 全局链接样式 */
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease;
+}
+
+/* 全局按钮样式 */
+button {
+    cursor: pointer;
+    border: none;
+    background: none;
+    font-family: inherit;
+}
+
+/* 全局列表样式 */
+ul, ol {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* 全局表单元素样式 */
+input, select, textarea {
+    font-family: inherit;
+    font-size: inherit;
+}
+
+/* 全局字体设置 */
+body {
+    font-family: 'Helvetica', 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--color-text);
+}
+
+/* 确保标题也使用相同的字体 */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Helvetica', 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* 禁止滚动类 */
+.no-scroll {
+    overflow: hidden;
+}
+
+/* 响应式容器 */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+
+/* 响应式设计基础 */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 var(--spacing-sm);
+    }
+} 

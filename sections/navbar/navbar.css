@@ -1,0 +1,153 @@
+/* 顶部区域样式 */
+.navbar-section {
+    width: 100%;
+    height: auto;
+    position: relative;
+    z-index: 99999;
+    padding: 0;
+    margin: 0;
+    display: block;
+    background-color: #FBFAF6;
+}
+
+/* 顶部区域 */
+.navbar__header {
+    width: 100%;
+    height: 152px;
+    padding: 18px 50px;
+    background-color: #FBFAF6;
+    position: relative;
+    margin: 0;
+}
+
+.navbar__top-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    max-width: 100%;
+}
+
+/* Logo样式 */
+.logo {
+    display: flex;
+    align-items: center;
+    margin: 0;
+}
+
+.logo__img {
+    height: 60px;
+    width: auto;
+    min-width: 40px;
+}
+
+/* 语言选择器 */
+.language-selector {
+    padding: 0;
+    margin: 0;
+}
+
+.language-select {
+    padding: var(--spacing-xs) var(--spacing-md);
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    background: var(--color-white);
+    color: var(--color-primary);
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.language-select:hover {
+    border-color: var(--color-primary);
+}
+
+/* 导航链接区域 - 新的section */
+.nav-links-section {
+    height: 56px;
+    background-color: #0E3E2A;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-links__container {
+    height: 56px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links__link {
+    width: 240px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFFFFF;
+    text-decoration: none;
+    transition: all 0.2s ease-out;
+    position: relative;
+    font-size: 16px;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-links__link:hover,
+.nav-links__link.active {
+    font-size: 18px;
+}
+
+/* 底部线条效果 */
+.nav-links__link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #86A444;
+    transform: scaleX(0);
+    transition: transform 0.2s ease-out;
+}
+
+.nav-links__link:hover::after,
+.nav-links__link.active::after {
+    transform: scaleX(1);
+}
+
+/* 移动端适配 */
+@media (max-width: 768px) {
+    /* 顶部区域 */
+    .navbar__header {
+        height: 120px;
+        padding: 12px 20px;
+    }
+
+    .logo__img {
+        height: 40px;
+        min-width: 30px;
+    }
+
+    /* 语言选择器 */
+    .language-select {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+    }
+}
+
+/* 小屏幕手机适配 */
+@media (max-width: 480px) {
+    .navbar__header {
+        height: 100px;
+        padding: 10px 15px;
+    }
+
+    .logo__img {
+        height: 35px;
+        min-width: 25px;
+    }
+} 

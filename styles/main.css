@@ -1,0 +1,247 @@
+/* =========================================
+   主样式文件
+   - 只包含样式导入
+   - 按照基础、布局、组件、页面部分的顺序导入
+   ========================================= */
+
+/* Base Styles */
+@import url('./base/variables.css');  /* 变量定义 */
+@import url('./base/reset.css');      /* CSS重置 */
+@import url('./base/global.css');     /* 全局样式 */
+@import url('./base/shadows.css');    /* 阴影样式 */
+@import url('./base/scrollbar.css');  /* 滚动条样式 */
+
+/* Layout */
+@import url('./layout/grid.css');     /* 网格系统 */
+
+/* Components */
+@import url('./components/button-components.css');   /* 按钮组件 */
+@import url('./components/card-components.css');     /* 卡片组件 */
+@import url('./components/back-to-top.css');        /* 返回顶部组件 */
+@import url('./components/section-header.css');      /* 章节标题组件 */
+
+/* Sections */
+@import url('../sections/top/top.css');              /* 顶部区域 */
+@import url('../sections/nav-links/nav-links.css');        /* 导航链接 */
+@import url('../sections/hero/hero.css');                  /* 主页横幅 */
+@import url('../sections/about/about.css');                /* 关于我们 */
+@import url('../sections/focus-areas/focus-areas.css');    /* 重点领域 */
+@import url('../sections/partners/partners.css');          /* 合作伙伴 */
+@import url('../sections/latest-news/latest-news.css');    /* 最新新闻 */
+@import url('../sections/foundation-numbers/foundation-numbers.css');  /* 基金会数据 */
+@import url('../sections/foundation-board/foundation-board.css');      /* 基金会董事会 */
+@import url('../sections/footer/footer.css');              /* 页脚 */
+
+/* Contact Modal Styles */
+.contact-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 100001;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    backdrop-filter: blur(4px);
+}
+
+.contact-modal.active {
+    display: flex;
+    opacity: 1;
+}
+
+.contact-modal.active ~ .back-to-top {
+    display: none;
+}
+
+.contact-modal__content {
+    background: var(--color-hero);
+    border-radius: var(--border-radius-lg);
+    width: 90%;
+    max-width: 480px;
+    min-height: 640px;
+    position: relative;
+    opacity: 0;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+    z-index: 100002;
+}
+
+.contact-modal.active .contact-modal__content {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* Top Section */
+.contact-modal__top {
+    display: flex;
+    justify-content: space-between;
+    padding-left: var(--spacing-lg);
+    padding-right: var(--spacing-lg);
+    padding-top: var(--spacing-xl);
+}
+
+.contact-modal__logo-img {
+    width: 360px;
+    height: auto;
+    margin-top: 0;
+}
+
+.contact-modal__close {
+    height: 32px;
+    width: 32px;
+    font-size: 32px;
+    color: var(--color-primary);
+    margin-top: 0;
+}
+
+/* Middle Section */
+.contact-modal__middle {
+    margin-left: var(--spacing-lg);
+    margin-right: var(--spacing-lg);
+    margin-top: var(--spacing-xxxl);
+    padding: var(--spacing-xxl) var(--spacing-md) var(--spacing-xl);
+    flex: 1;
+    background-color: var(--color-secondary);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.contact-modal__title {
+    font-size: 48px;
+    color: var(--color-background);
+    margin: 0;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    text-transform: lowercase;
+    margin-bottom: var(--spacing-sm);
+    text-align: left;
+}
+
+.contact-modal__text {
+    color: var(--color-background);
+    margin-bottom: var(--spacing-xl);
+    font-size: var(--font-size-md);
+    line-height: 1.5;
+    text-align: left;
+}
+
+.contact-modal__email-container {
+    background: transparent;
+    border: 2px solid var(--color-hero);
+    border-radius: var(--border-radius-lg);
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    width: 100%;
+    height: 64px;
+    padding: 0;
+    margin-bottom: var(--spacing-xl);
+}
+
+.contact-modal__email {
+    color: var(--color-primary);
+    text-decoration: none;
+    font-size: var(--font-size-lg);
+    font-weight: 500;
+    flex: 3;
+    display: flex;
+    align-items: center;
+    padding: 0 var(--spacing-lg);
+}
+
+.contact-modal__copy-btn {
+    background: var(--color-hero);
+    border: none;
+    color: var(--color-primary);
+    cursor: pointer;
+    font-size: var(--font-size-md);
+    font-weight: 500;
+    transition: all 0.2s ease;
+    flex: 1;
+    border-radius: 0 var(--border-radius-lg) var(--border-radius-lg) 0;
+    margin: -2px -2px -2px 0;
+}
+
+/* Bottom Section */
+.contact-modal__send-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-primary);
+    color: var(--color-secondary);
+    text-decoration: none;
+    padding: var(--spacing-lg);
+    font-weight: 500;
+    font-size: var(--font-size-md);
+    transition: all 0.2s ease;
+    width: 100%;
+    margin-top: 0;
+    border-radius: 0 0 var(--border-radius-lg) var(--border-radius-lg);
+}
+
+@media (max-width: 480px) {
+    .contact-modal__content {
+        width: 95%;
+        min-height: 580px;
+        max-height: 95vh;
+    }
+
+    .contact-modal__top {
+        padding: var(--spacing-lg) var(--spacing-lg) 0;
+        margin-top: var(--spacing-lg);
+    }
+    
+    .contact-modal__logo-img {
+        width: 200px;
+        height: auto;
+        object-fit: contain;
+    }
+    
+    .contact-modal__middle {
+        padding: var(--spacing-lg) var(--spacing-md) var(--spacing-lg);
+        margin: var(--spacing-xl) var(--spacing-md) 0;
+    }
+    
+    .contact-modal__title {
+        font-size: 32px;
+    }
+    
+    .contact-modal__text {
+        font-size: var(--font-size-md);
+    }
+    
+    .contact-modal__email {
+        font-size: var(--font-size-md);
+        padding: 0 var(--spacing-md);
+    }
+    
+    .contact-modal__copy-btn {
+        font-size: var(--font-size-sm);
+    }
+}
+
+@media (max-width: 360px) {
+    .contact-modal__content {
+        min-height: 520px;
+    }
+    
+    .contact-modal__middle {
+        margin-top: var(--spacing-lg);
+    }
+    
+    .contact-modal__logo-img {
+        width: 160px;
+    }
+    
+    .contact-modal__title {
+        font-size: 28px;
+    }
+} 

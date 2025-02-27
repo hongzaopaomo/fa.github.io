@@ -1,0 +1,27 @@
+/* =========================================
+   网格布局系统
+   1. 基础网格
+   2. 响应式网格
+   3. 网格间距
+   4. 特殊布局
+   ========================================= */
+
+.grid {
+    display: grid;
+    gap: var(--spacing-md);
+}
+
+/* 列数定义 */
+.grid-cols-2 { grid-template-columns: repeat(2, 1fr); }
+.grid-cols-3 { grid-template-columns: repeat(3, 1fr); }
+.grid-cols-4 { grid-template-columns: repeat(4, 1fr); }
+
+/* 响应式网格 */
+@media (max-width: 1024px) {
+    .grid-cols-md-2 { grid-template-columns: repeat(2, 1fr); }
+    .grid-cols-md-1 { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 768px) {
+    .grid-cols-sm-1 { grid-template-columns: 1fr; }
+} 

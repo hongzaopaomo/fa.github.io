@@ -1,0 +1,397 @@
+/* =========================================
+   Focus Areas Section 样式
+   1. 整体布局
+   2. 标题区域布局
+   3. Projects 区域
+   4. 响应式适配
+   ========================================= */
+
+/* 1. 整体布局 */
+.focus-areas-section {
+    width: 100%;
+    background-color: var(--color-hero);
+    position: relative;
+    height: auto;
+    padding-bottom: var(--spacing-xxxl);
+    padding-top: var(--spacing-md);
+    padding-left: var(--spacing-xxl);
+    padding-right: var(--spacing-xxl);
+    margin-bottom: 0;
+}
+
+/* 2. 标题区域布局 */
+.focus-areas-section .section-header {
+    padding-left: 0;
+}
+
+/* 3. Projects 区域 */
+.focus-areas__projects {
+    width: 100%;
+    height: auto;
+    background-color: var(--color-primary);
+}
+
+/* 项目块样式 */
+.project-block {
+    padding: var(--spacing-xxl);
+    background-color: var(--color-primary);
+    margin-bottom: var(--spacing-xxl);
+}
+
+.project-block:last-child {
+    margin-bottom: 0;
+}
+
+/* 版块标题区域 */
+.block-header {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.block-header__title {
+    color: var(--color-background);
+    font-size: var(--font-size-h1);
+    text-align: left;
+    margin-top: var(--spacing-xxl);
+    margin-bottom: var(--spacing-md);
+}
+
+.block-header__description {
+    font-size: var(--font-size-xl);
+    color: var(--color-background);
+    max-width: 65%;
+    line-height: 1.6;
+    margin: 0;
+    margin-bottom: var(--spacing-xl);
+    position: relative;
+    padding-left: 0;
+    text-align: left;
+}
+
+/* Agritech样式 */
+.agritech-card {
+    display: block;
+    margin-top: var(--spacing-xl);
+    background: var(--color-hero);
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    position: relative;
+    min-height: 400px;
+}
+
+.agritech-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+}
+
+.agritech-card__content {
+    width: 60%;
+    padding: var(--spacing-xl);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: var(--spacing-xl);
+    height: 100%;
+}
+
+.agritech-card__title {
+    color: var(--color-secondary);
+    font-size: var(--font-size-h2);
+    font-weight: 600;
+    margin: 0;
+    line-height: 1.3;
+}
+
+.agritech-card__subtitle {
+    color: var(--color-text-light);
+    font-size: var(--font-size-md);
+    margin-top: var(--spacing-sm);
+    margin-bottom: var(--spacing-xl);
+}
+
+.agritech-card__description {
+    color: var(--color-text);
+    font-size: var(--font-size-h6);
+    line-height: 1.6;
+    margin: 0;
+    opacity: 0.9;
+}
+
+.agritech-card__image {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Agriedu 卡片容器 */
+.agriedu .cards-container {
+    display: grid;
+    gap: var(--spacing-xl);
+    margin-top: var(--spacing-xl);
+}
+
+/* Agriedu 卡片样式 */
+.agriedu-card {
+    display: block;
+    margin-top: var(--spacing-xl);
+    background: var(--color-hero);
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    position: relative;
+    min-height: 400px;
+}
+
+.agriedu-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+}
+
+.agriedu-card__content {
+    width: 60%;
+    padding: var(--spacing-xl);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: var(--spacing-xl);
+    height: 100%;
+    margin-left: 40%;
+}
+
+.agriedu-card__title {
+    color: var(--color-secondary);
+    font-size: var(--font-size-h2);
+    font-weight: 600;
+    margin: 0;
+    line-height: 1.3;
+}
+
+.agriedu-card__subtitle {
+    color: var(--color-text-light);
+    font-size: var(--font-size-md);
+    margin-top: var(--spacing-sm);
+    margin-bottom: var(--spacing-xl);
+}
+
+.agriedu-card__description {
+    color: var(--color-text);
+    font-size: var(--font-size-h6);
+    line-height: 1.6;
+    margin: 0;
+    opacity: 0.9;
+}
+
+.agriedu-card__image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.agriedu-card .learn-more-btn {
+    align-self: flex-start;
+}
+
+/* 通用按钮样式 */
+.learn-more-btn {
+    display: inline-flex;
+    align-items: center;
+    color: var(--color-white);
+    font-size: var(--font-size-md);
+    font-weight: 500;
+    padding: var(--spacing-md) var(--spacing-xl);
+    background: var(--color-primary);
+    border-radius: var(--border-radius-md);
+    align-self: flex-start;
+    transition: all var(--transition-normal);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.learn-more-btn::after {
+    content: '→';
+    margin-left: var(--spacing-md);
+    transition: transform var(--transition-normal);
+}
+
+.learn-more-btn:hover {
+    background: var(--color-secondary);
+    transform: translateY(-2px);
+}
+
+.learn-more-btn:hover::after {
+    transform: translateX(4px);
+}
+
+/* 响应式适配 */
+@media (max-width: 1024px) {
+    .focus-areas-section .section-header {
+        padding-left: var(--spacing-xl);
+    }
+    
+    .focus-areas__projects {
+        margin-left: calc(-1 * var(--spacing-xl));
+        margin-right: calc(-1 * var(--spacing-xl));
+        padding: var(--spacing-xl);
+    }
+    
+    .block-header__description {
+        max-width: 80%;
+    }
+
+    .agritech .cards-container {
+        grid-template-columns: 1fr;
+    }
+
+    .agritech-card {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .agritech-card__content {
+        width: 50%;
+        padding: var(--spacing-lg);
+    }
+
+    .agritech-card__image {
+        width: 50%;
+    }
+
+    .agriedu-card__content {
+        width: 50%;
+        padding: var(--spacing-lg);
+        margin-left: 50%;
+    }
+
+    .agriedu-card__image {
+        width: 50%;
+    }
+}
+
+@media (max-width: 768px) {
+    .focus-areas-section {
+        padding: var(--spacing-xl) 0;
+    }
+
+    .focus-areas-section .section-header {
+        padding-left: var(--spacing-lg);
+        margin-bottom: var(--spacing-lg);
+    }
+
+    .focus-areas__projects {
+        margin-left: 0;
+        margin-right: 0;
+        padding: var(--spacing-xl) var(--spacing-lg);
+    }
+
+    .block-header__description {
+        max-width: 100%;
+    }
+
+    .cards-container {
+        gap: var(--spacing-lg);
+    }
+
+    .agritech-card,
+    .agriedu-card {
+        min-height: auto;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .agritech-card__content,
+    .agriedu-card__content {
+        position: relative;
+        width: 100%;
+        height: auto;
+        margin-left: 0;
+        order: 2;
+    }
+
+    .agritech-card__image,
+    .agriedu-card__image {
+        position: relative;
+        width: 100%;
+        height: 200px;
+        order: 1;
+    }
+
+    .agritech-card__title {
+        font-size: var(--font-size-lg);
+    }
+
+    .agritech-card__description {
+        font-size: var(--font-size-md);
+        margin-bottom: var(--spacing-md);
+    }
+
+    .agriedu-card__title {
+        text-align: left;
+    }
+
+    .agriedu-card__subtitle {
+        text-align: left;
+    }
+
+    .agriedu-card__description {
+        text-align: left;
+    }
+
+    .agriedu-card .learn-more-btn {
+        align-self: flex-start;
+    }
+
+    .project-block {
+        padding: var(--spacing-lg);
+        margin-bottom: var(--spacing-xxl);
+    }
+}
+
+@media (max-width: 480px) {
+    .block-header {
+        flex-direction: column;
+        gap: var(--spacing-md);
+    }
+
+    .block-header__icon {
+        width: 28px;
+        height: 28px;
+    }
+
+    .block-header__title {
+        font-size: var(--font-size-xl);
+    }
+
+    .block-header__description {
+        font-size: var(--font-size-md);
+    }
+
+    .agritech-card__image,
+    .agriedu-card__image {
+        height: 180px;
+    }
+
+    .agritech-card__content,
+    .agriedu-card__content {
+        padding: var(--spacing-md);
+    }
+
+    .learn-more-btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .project-block {
+        padding: var(--spacing-md);
+        margin-bottom: var(--spacing-xl);
+    }
+}
+
+/* 工具类 */
+.no-scroll {
+    overflow: hidden;
+}

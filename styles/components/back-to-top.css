@@ -1,0 +1,75 @@
+/* 返回顶部按钮 */
+.back-to-top {
+    position: fixed !important;  /* 确保位置固定 */
+    right: 32px;
+    bottom: 32px;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--color-secondary);
+    color: #FFFFFF;
+    border: none;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    z-index: 9999;  /* 确保在最上层 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;  /* 确保可以点击 */
+}
+
+.back-to-top:hover {
+    background: var(--color-primary);
+    transform: translateY(-4px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* 确保图标居中 */
+.back-to-top i {
+    font-size: 24px;  /* 增大图标尺寸 */
+    line-height: 1;
+    color: var(--color-white);  /* 确保图标颜色为白色 */
+}
+
+/* 这个组件包含特殊的定位和动画效果 */
+.back-to-top {
+    position: fixed;
+    right: 32px;
+    bottom: 32px;
+    /* ... 其他特殊样式 */
+}
+
+/* 移动端适配 */
+@media (max-width: 768px) {
+    .back-to-top {
+        right: 16px;
+        bottom: 16px;
+        width: 40px;
+        height: 40px;
+    }
+
+    .back-to-top i {
+        font-size: 20px;  /* 移动端稍微减小图标尺寸 */
+    }
+}
+
+@media (max-width: 480px) {
+    .back-to-top {
+        right: 12px;
+        bottom: 12px;
+        width: 36px;
+        height: 36px;
+    }
+
+    .back-to-top i {
+        font-size: 18px;
+    }
+} 

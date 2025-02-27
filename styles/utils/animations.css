@@ -1,0 +1,98 @@
+/* =========================================
+   动画效果定义
+   1. 过渡动画
+   2. 变换动画
+   3. 关键帧动画
+   4. 特效动画
+   ========================================= */
+
+/* 过渡效果 */
+.transition-all {
+    transition: all 0.3s ease;
+}
+
+/* 淡入淡出 */
+.fade {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.fade.show {
+    opacity: 1;
+}
+
+/* 滑动动画 */
+@keyframes slideIn {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.slide-in {
+    animation: slideIn 0.5s ease forwards;
+}
+
+/* 图片轮播动画 */
+@keyframes carousel {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+}
+
+.carousel-animation {
+    animation: carousel 20s linear infinite;
+}
+
+/* 悬停效果 */
+.hover-lift {
+    transition: transform 0.3s ease;
+}
+
+.hover-lift:hover {
+    transform: translateY(-5px);
+}
+
+/* 加载动画 */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.loading {
+    animation: spin 1s linear infinite;
+}
+
+/* 添加通用过渡效果 */
+.transition-transform {
+    transition: transform 0.3s ease;
+}
+
+/* 添加通用动画关键帧 */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* 动画类 */
+.fade-in {
+    animation: fadeIn 0.3s ease forwards;
+}
+
+.slide-up {
+    animation: slideUp 0.3s ease forwards;
+} 

@@ -1,0 +1,162 @@
+/* =========================================
+   Foundation Board Section 样式
+   1. 整体布局
+   2. 顶部区域
+      - 标题样式
+      - 装饰线
+   3. 弹出框
+      - 遮罩层
+      - 内容区域
+      - 标题栏
+   4. Board Members
+      - 成员网格
+      - 成员卡片
+      - 信息区域
+   5. 响应式适配
+   ========================================= */
+
+/* 1. 整体布局 */
+.board-section {
+    width: 100%;
+    background-color: #FBFAF6;
+    height: auto;
+    margin-top: 56px;
+    margin-bottom: 48px;
+}
+
+/* 2. 顶部区域 */
+.board__header {
+    width: 100%;
+    height: 136px;
+    padding: 18px 50px;
+    display: flex;
+    align-items: flex-start;
+}
+
+.board__title {
+    max-width: var(--container-width);
+    margin: 0;
+    padding: 0;
+    display: block;
+    color: var(--primary-color);
+    font-size: var(--font-size-h1);
+    font-weight: 600;
+    position: relative;
+    line-height: 1.2;
+    text-align: left;
+    padding-left: 24px;
+}
+
+/* 装饰线 */
+.board__title::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 8px;
+    width: 16px;
+    height: 30%;
+    background: var(--color-secondary);
+}
+
+/* 4. Board Members */
+/* 成员网格 */
+.board__members {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+}
+
+/* 成员卡片 */
+.board__member {
+    display: flex;
+    flex-direction: column;
+    background: #FFFFFF;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    width: 100%;
+    height: fit-content;
+}
+
+.board__member-img {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border: none;
+}
+
+/* 信息区域 */
+.board__member-info {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 24px;
+    text-align: left;
+}
+
+.board__member-info h4 {
+    font-size: 20px;
+    color: #0E3E2A;
+    font-weight: 600;
+    margin: 0;
+    padding-bottom: 12px;
+    display: inline-block;
+    border-bottom: 1px solid #0E3E2A;
+}
+
+.board__member-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 12px;
+}
+
+.board__member-bottom p {
+    color: #666;
+    font-size: 16px;
+    margin: 0;
+}
+
+.board__member-btn {
+    width: 32px;
+    height: 32px;
+    border: none;
+    background: #E8F3D6;
+    color: #0E3E2A;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+}
+
+.board__member-btn:hover {
+    background: #86A444;
+    color: #FFFFFF;
+    transform: translateX(4px);
+}
+
+/* 5. 响应式适配 */
+@media (max-width: 1024px) {
+    .board__members {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .board__members {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+        overflow-y: auto;
+        width: calc(100vw - 48px);
+    }
+    
+    .board__member {
+        width: 100%;
+    }
+
+    .board__member-img {
+        width: 120px;
+        height: 120px;
+    }
+} 

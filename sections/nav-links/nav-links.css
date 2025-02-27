@@ -1,0 +1,150 @@
+/* 导航栏整体 */
+/* 导航链接区域 - 新的section */
+.nav-links-section {
+    height: var(--nav-links-height);
+    background-color: var(--color-secondary);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-links__container {
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    max-width: var(--container-width);
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links__link {
+    width: 240px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-white);
+    text-decoration: none;
+    transition: all var(--transition-fast);
+    position: relative;
+    font-size: var(--font-size-md);
+    padding: 0;
+    margin: 0;
+}
+
+.nav-links__link:hover,
+.nav-links__link.active {
+    font-size: var(--font-size-lg);
+}
+
+/* 底部线条效果 */
+.nav-links__link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--color-primary);
+    transform: scaleX(0);
+    transition: transform var(--transition-fast);
+}
+
+.nav-links__link:hover::after,
+.nav-links__link.active::after {
+    transform: scaleX(1);
+}
+
+/* 滚动时隐藏导航栏 */
+.nav-links-section.hidden {
+    transform: translateY(-100%);
+}
+
+/* 移动端当前section指示器 */
+.current-section-indicator {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    background-color: var(--color-secondary);
+    color: var(--color-white);
+    z-index: 999;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--font-size-lg);
+    transform: translateY(-100%);
+    transition: transform var(--transition-normal);
+}
+
+.current-section-indicator.visible {
+    transform: translateY(0);
+}
+
+.current-section-indicator__text {
+    position: relative;
+    padding: 0 var(--spacing-md);
+}
+
+.current-section-indicator__text::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--color-background);
+    transform: scaleX(1);
+}
+
+/* 平板及小屏适配 */
+@media (max-width: 768px) {
+    .nav-links-section {
+        display: none; /* 在移动端隐藏导航链接，使用侧边菜单代替 */
+    }
+
+    .current-section-indicator {
+        display: flex; /* 在移动端显示当前section指示器 */
+    }
+
+    .nav-links__container {
+        flex-direction: column;
+        padding: 0.5rem 0;
+        gap: 1rem; /* 让小屏幕间距更紧凑 */
+    }
+
+    .nav-links__link {
+        width: 100%;
+        height: 40px;
+        font-size: 0.875rem; /* 14px */
+    }
+
+    .nav-links__link:hover,
+    .nav-links__link.active {
+        font-size: 1rem; /* 16px */
+    }
+}
+
+/* 适配更小屏幕（如 iPhone SE） */
+@media (max-width: 480px) {
+    .nav-links__container {
+        padding: 0.3rem 0;
+        gap: 0.75rem;
+    }
+
+    .nav-links__link {
+        height: 32px;
+        font-size: 0.8125rem; /* 13px */
+    }
+
+    .nav-links__link:hover,
+    .nav-links__link.active {
+        font-size: 0.9375rem; /* 15px */
+    }
+}

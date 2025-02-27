@@ -1,0 +1,131 @@
+/* =========================================
+   全局变量定义
+   1. 颜色系统
+   2. 字体系统
+   3. 间距系统
+   4. 布局尺寸
+   5. 圆角定义
+   6. 阴影效果
+   7. 过渡动画
+   8. Z-index层级
+   9. 导航相关
+   10. 暗色主题
+   ========================================= */
+
+:root {
+    /* 颜色系统 */
+    --color-primary: #1f5d3f;      /* 主色调：深绿色 */
+    --color-secondary: #86A444;    /* 次要色调：浅绿色 */
+    --color-text: #333333;         /* 主要文本色 */
+    --color-text-light: #666666;   /* 次要文本色 */
+    --color-white: #FFFFFF;        /* 纯白色 */
+    --color-background: #FBFAF6;   /* 背景色 */
+    --color-border: #fffffa;       /* 边框色 */
+    --color-overlay: rgba(0, 0, 0, 0.5);  /* 遮罩层颜色 */
+    --color-success: #86A444;      /* 成功状态色 */
+    --color-hover: #6B8336;        /* 悬停状态色 */
+    --color-board-bg: #FBFAF6;     /* Board背景色 */
+    --color-board-text: #b9b9b9;   /* Board文本色 */
+    --color-board-button: #E8F3D6; /* Board按钮背景色 */
+    --color-hero: #E0DED1; /* Board按钮背景色 */
+
+    /* 字体系统 */
+    --font-primary: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    --font-size-base: 16px; 
+    --font-size-xxs: 10px;
+    --font-size-xs: 12px;
+    --font-size-sm: 14px;          /* 14px */
+    --font-size-md: 16px;          /* 16px */
+    --font-size-lg: 18px;          /* 18px */
+    --font-size-xl: 24px;          /* 24px */
+    --font-size-xxl: 32px;       /* 24px */
+    --font-size-xxxl: 48px;
+    --font-size-xxxxl: 64px;
+    --font-size-xxxxxl: 80px;
+    --font-size-xxxxxxl: 96px;
+    --font-size-xxxxxxxl: 112px;
+    --font-size-h1: 3.2rem;        /* 51.2px */
+    --font-size-h2: 2.4rem;        /* 38.4px */
+    --font-size-h3: 1.8rem;        /* 28.8px */
+    --font-size-h4: 1.4rem;        /* 22.4px */
+    --font-size-h5: 1.2rem;        /* 19.2px */
+    --font-size-h6: 1rem;        /* 16px */
+    
+    /* 间距系统 */
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 24px;
+    --spacing-xl: 32px;
+    --spacing-xxl: 3rem;           /* 48px */
+    --spacing-xxxl: 4rem;
+    --spacing-xxxxl: 5rem;          /* 64px */
+    --spacing-xxxxxl: 6rem; 
+    --spacing-xxxxxxl: 7rem;
+    --spacing-xxxxxxxl: 8rem;
+    --spacing-xxxxxxxl: 9rem;
+
+
+
+    /* 布局尺寸 */
+    --container-width: 1200px;     /* 内容最大宽度 */
+    --navbar-height: 80px;         /* 导航栏高度 */
+    --section-padding: 6rem;       /* 区块内边距 */
+    --modal-max-width: 90%;        /* 模态框最大宽度 */
+    --modal-max-height: 90vh;      /* 模态框最大高度 */
+    --board-height: 640px;         /* Board高度 */
+
+    /* 圆角 */
+    --border-radius-sm: 4px;
+    --border-radius-md: 8px;
+    --border-radius-lg: 12px;
+
+    /* 阴影 */
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.08);
+    --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.1);
+    --shadow-board: 0 4px 12px rgba(0,0,0,0.1);
+
+    /* 过渡 */
+    --transition-fast: 0.2s ease;
+    --transition-normal: 0.3s ease;
+    --transition-slow: 0.5s ease;
+
+    /* Z-index层级 */
+    --z-index-dropdown: 100;
+    --z-index-sticky: 200;
+    --z-index-fixed: 300;
+    --z-index-modal-backdrop: 400;
+    --z-index-modal: 401;
+    --z-index-popover: 500;
+    --z-index-tooltip: 600;
+    --z-index-board: 90;
+    --z-index-board-content: 91;
+
+    /* 导航相关 */
+    --nav-links-height: 56px;  /* nav-links的高度 */
+
+    /* 组件特定变量 */
+    --button-height: 48px;
+    --card-padding: var(--spacing-lg);
+    --modal-width: 800px;
+    
+    /* 响应式断点 */
+    --breakpoint-sm: 576px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 992px;
+    --breakpoint-xl: 1200px;
+}
+
+/* 暗色主题变量 */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --color-text: #FFFFFF;
+        --color-text-light: #CCCCCC;
+        --color-background: #1A1A1A;
+        --color-border: #333333;
+        --color-board-bg: #2A2A2A;
+        --color-board-text: #CCCCCC;
+        --color-board-button: #3E4E2A;
+    }
+} 

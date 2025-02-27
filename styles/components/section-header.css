@@ -1,0 +1,84 @@
+/* =========================================
+   Section Header 通用样式
+   ========================================= */
+
+.section-header {
+    width: 100%;
+    margin-top: 48px;
+    margin-bottom: 48px;
+}
+
+.section-title {
+    color: var(--color-primary);
+    font-size: var(--font-size-h1);
+    font-weight: 600;
+    position: relative;
+    line-height: 1.2;
+    padding-left: 24px;
+    margin: 0;
+    text-transform: capitalize;
+}
+
+/* 装饰线 */
+.section-title::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 60%;
+    background: var(--color-secondary);
+}
+
+/* 响应式适配 */
+@media (max-width: 1024px) {
+    .section-header {
+        margin-top: 36px;
+        margin-bottom: 36px;
+    }
+
+    .section-title {
+        font-size: calc(var(--font-size-h1) * 0.9);
+        padding-left: 20px;
+    }
+
+    .section-title::before {
+        width: 14px;
+        height: 55%;
+    }
+}
+
+@media (max-width: 768px) {
+    .section-header {
+        margin-top: 32px;
+        margin-bottom: 32px;
+    }
+
+    .section-title {
+        font-size: calc(var(--font-size-h1) * 0.7);
+        padding-left: 16px;
+    }
+
+    .section-title::before {
+        width: 12px;
+        height: 50%;
+    }
+}
+
+@media (max-width: 480px) {
+    .section-header {
+        margin-top: 24px;
+        margin-bottom: 24px;
+    }
+
+    .section-title {
+        font-size: calc(var(--font-size-h1) * 0.6);
+        padding-left: 12px;
+    }
+
+    .section-title::before {
+        width: 8px;
+        height: 45%;
+    }
+} 

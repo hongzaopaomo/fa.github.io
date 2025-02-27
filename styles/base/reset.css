@@ -1,0 +1,149 @@
+/**
+ * 重置样式
+ * 重置浏览器默认样式，确保跨浏览器的一致性
+ * 包含：
+ * - 基础元素重置
+ * - 盒模型设置
+ * - 字体基础设置
+ */
+
+/* 全局重置 */
+*, 
+*::before, 
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* HTML5元素显示 */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, main, nav, section {
+    display: block;
+}
+
+/* 基础HTML元素 */
+html {
+    font-size: var(--font-size-base);  /* 基础字号 */
+    line-height: 1.15;                 /* 基础行高 */
+    -webkit-text-size-adjust: 100%;    /* 防止iOS横屏字号变大 */
+    -webkit-tap-highlight-color: transparent;  /* 移除移动端点击高亮 */
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-primary);  /* 主字体 */
+    font-size: 1rem;                   /* 相对字号 */
+    line-height: 1.5;                  /* 行高 */
+    color: var(--color-text);          /* 文字颜色 */
+    background: var(--color-white);    /* 背景色 */
+    -webkit-font-smoothing: antialiased;  /* 字体平滑 */
+    -moz-osx-font-smoothing: grayscale;   /* 字体平滑 */
+    margin: 0;
+    padding: 0;
+}
+
+/* 媒体元素 */
+img, 
+picture, 
+video, 
+canvas, 
+svg {
+    display: block;         /* 块级显示 */
+    max-width: 100%;       /* 最大宽度 */
+    height: auto;          /* 自动高度 */
+}
+
+/* 表单元素 */
+input,
+button,
+textarea,
+select {
+    font: inherit;         /* 继承字体 */
+    color: inherit;        /* 继承颜色 */
+}
+
+/* 按钮样式重置 */
+button {
+    background: none;      /* 移除背景 */
+    border: none;          /* 移除边框 */
+    cursor: pointer;       /* 指针样式 */
+    padding: 0;           /* 移除内边距 */
+}
+
+/* 链接样式重置 */
+a {
+    color: inherit;        /* 继承颜色 */
+    text-decoration: none; /* 移除下划线 */
+}
+
+/* 列表样式重置 */
+ul,
+ol {
+    list-style: none;      /* 移除列表样式 */
+}
+
+/* 表格样式重置 */
+table {
+    border-collapse: collapse;  /* 合并边框 */
+    border-spacing: 0;         /* 移除边框间距 */
+}
+
+/* 表单元素对齐 */
+input,
+textarea,
+button,
+select {
+    margin: 0;            /* 移除外边距 */
+    border-radius: 0;     /* 移除圆角 */
+}
+
+/* 文本选择样式 */
+::selection {
+    background: var(--color-primary);   /* 选中背景色 */
+    color: var(--color-white);          /* 选中文字颜色 */
+}
+
+/* 移除 textarea 默认样式 */
+textarea {
+    resize: vertical;      /* 只允许垂直调整大小 */
+}
+
+/* 修复 IE 中 svg 溢出 */
+svg:not(:root) {
+    overflow: hidden;
+}
+
+/* 移除 Firefox 中 input 的内边框 */
+input::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+}
+
+/* 确保 iOS 中的可点击元素在触摸时高亮 */
+a[href],
+button,
+input,
+select,
+textarea {
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* 标题样式重置 */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;        /* 重置字重 */
+    line-height: 1.2;           /* 设置行高 */
+}
+
+/* 引用样式重置 */
+blockquote, q {
+    quotes: none;              /* 移除引号 */
+}
+
+/* 清除浮动 */
+.clearfix::after {
+    content: '';               /* 创建伪元素 */
+    display: block;            /* 块级显示 */
+    clear: both;              /* 清除浮动 */
+} 
