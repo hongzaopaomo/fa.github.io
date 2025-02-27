@@ -115,17 +115,4 @@
     --breakpoint-md: 768px;
     --breakpoint-lg: 992px;
     --breakpoint-xl: 1200px;
-}
-
-/* 暗色主题变量 */
-@media (prefers-color-scheme: dark) {
-    :root {
-        --color-text: #FFFFFF;
-        --color-text-light: #CCCCCC;
-        --color-background: #1A1A1A;
-        --color-border: #333333;
-        --color-board-bg: #2A2A2A;
-        --color-board-text: #CCCCCC;
-        --color-board-button: #3E4E2A;
-    }
 } 
