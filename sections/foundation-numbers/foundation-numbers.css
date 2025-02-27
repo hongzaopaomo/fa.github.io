@@ -22,7 +22,7 @@
     width: 100%;
     background-color: var(--color-hero);
     position: relative;
-    padding: var(--spacing-xxl);
+    padding: var(--spacing-section) var(--spacing-container);
     padding-bottom: var(--spacing-xxxl);
     padding-top: var(--spacing-md);
     margin-bottom: 0;
@@ -78,130 +78,101 @@
     width: 100%;
     min-height: 600px;  /* 调整为600px */
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    gap: 24px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--spacing-lg);
+    padding: var(--spacing-xl) 0;
+    max-width: var(--max-width-lg);
+    margin: 0 auto;
 }
 
 /* 4. 数据卡片 */
 /* 基础样式 */
 .numbers-card {
-    background: var(--color-border);
-    border-radius: 8px;
-    padding: 24px;
+    background: var(--color-hero);
+    border-radius: var(--border-radius-lg);
+    padding: var(--spacing-xl);
+    text-align: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
     position: relative;
     overflow: hidden;
-    transition: all 0.3s ease;
+}
+
+/* 添加点击状态样式 */
+.numbers-card.active,
+.numbers-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    background: var(--color-secondary);
+}
+
+.numbers-card.active .numbers-card__title,
+.numbers-card:hover .numbers-card__title,
+.numbers-card.active .numbers-card__value,
+.numbers-card:hover .numbers-card__value {
+    color: var(--color-hero);
+}
+
+.numbers-card__title {
+    font-size: var(--font-size-md);
+    color: var(--color-text);
+    margin-bottom: var(--spacing-md);
+    transition: color 0.3s ease;
+}
+
+.numbers-card__value {
+    font-size: var(--font-size-xxxl);
+    font-weight: 600;
+    color: var(--color-primary);
+    transition: color 0.3s ease;
 }
 
 /* 大卡片样式 */
 .numbers-card--large {
-    grid-column: span 1;
-    grid-row: span 2;
-    background-color: var(--color-board-button);
+    grid-column: 2 / 4;
+    padding: var(--spacing-xxl);
 }
 
-/* 标题和数值 */
-.numbers-card__title {
-    font-size: 24px;
-    font-weight: normal;
-    color: var(--color-primary);
+.numbers-card--large .numbers-card__value {
+    font-size: var(--font-size-huge);
+    margin-bottom: var(--spacing-lg);
 }
 
-.numbers-card__value {
-    font-size: var(--font-size-xxxxxl);
-    font-weight: bold;
-    color: var(--color-primary); 
-}
-
-/* 谷物图标 */
+/* 图标样式 */
 .numbers-card__icons {
     display: flex;
-    gap: 24px;
-    margin-top: 24px;
+    justify-content: center;
+    gap: var(--spacing-xl);
+    margin-top: var(--spacing-lg);
 }
 
 .grain-icon {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 8px;
-    background-color: var(--color-background);
-    padding: 8px;
-    border-radius: var(--border-radius-md);
-    width: 88px;
-    transition: transform var(--transition-normal);
-}
-
-.grain-icon:hover {
-    transform: translateY(-4px);
+    gap: var(--spacing-sm);
 }
 
 .grain-icon img {
     width: 32px;
     height: 32px;
-    object-fit: contain;
+    transition: transform 0.3s ease;
 }
 
 .grain-icon span {
-    font-size: 14px;
-    color: var(--color-text-light);
-    text-align: center;
-    word-break: break-word;
+    font-size: var(--font-size-sm);
+    color: var(--color-text);
+    transition: color 0.3s ease;
 }
 
-/* 悬停效果 */
-.numbers-card:not(.numbers-card--large) {
-    position: relative;
-    z-index: 1;
-    overflow: hidden;
+.numbers-card.active .grain-icon span,
+.numbers-card:hover .grain-icon span {
+    color: var(--color-hero);
 }
 
-.numbers-card:not(.numbers-card--large)::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    z-index: -1;
-}
-
-/* 为每个卡片设置对应的背景图片 */
-.numbers-card:nth-child(1)::before {
-    background-image: url('../../images/numbers/cocoa.jpg');
-}
-
-.numbers-card:nth-child(2)::before {
-    background-image: url('../../images/numbers/farmers.jpg');
-}
-
-.numbers-card:nth-child(4)::before {
-    background-image: url('../../images/numbers/reemployment.jpg');
-}
-
-.numbers-card:nth-child(5)::before {
-    background-image: url('../../images/numbers/schools.jpg');
-}
-
-.numbers-card:not(.numbers-card--large):hover {
-    transform: translateY(-4px);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-}
-
-.numbers-card:not(.numbers-card--large):hover::before {
-    opacity: 1;
-}
-
-.numbers-card:not(.numbers-card--large):hover .numbers-card__title,
-.numbers-card:not(.numbers-card--large):hover .numbers-card__value {
-    color: #FFFFFF;
-    position: relative;
-    z-index: 1;
+.numbers-card.active .grain-icon img,
+.numbers-card:hover .grain-icon img {
+    transform: scale(1.1);
 }
 
 /* 5. 响应式适配 */
@@ -215,25 +186,63 @@
 /* 移动端适配 */
 @media (max-width: 768px) {
     .foundation-numbers__main {
-        grid-template-columns: 1fr;
-        height: auto;
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-md);
+        padding: var(--spacing-lg) var(--spacing-md);
     }
 
     .numbers-card--large {
-        grid-column: auto;
-        grid-row: auto;
+        grid-column: 1 / 3;
+    }
+
+    .numbers-card {
+        padding: var(--spacing-lg);
+    }
+
+    .numbers-card__value {
+        font-size: var(--font-size-xxl);
+    }
+
+    .numbers-card--large .numbers-card__value {
+        font-size: var(--font-size-xxxl);
+    }
+
+    /* 移动端点击效果 */
+    .numbers-card:active {
+        transform: scale(0.98);
+    }
+
+    /* 移除悬停效果 */
+    @media (hover: none) {
+        .numbers-card:hover {
+            transform: none;
+            box-shadow: none;
+            background: var(--color-hero);
+        }
+
+        .numbers-card:hover .numbers-card__title,
+        .numbers-card:hover .numbers-card__value,
+        .numbers-card:hover .grain-icon span {
+            color: initial;
+        }
+
+        .numbers-card:hover .grain-icon img {
+            transform: none;
+        }
+    }
+}
+
+/* 小屏幕适配 */
+@media (max-width: 480px) {
+    .foundation-numbers__main {
+        grid-template-columns: 1fr;
+    }
+
+    .numbers-card--large {
+        grid-column: 1;
     }
 
     .numbers-card__icons {
-        gap: 16px;
-    }
-
-    .grain-icon img {
-        width: 24px;
-        height: 24px;
-    }
-
-    .grain-icon span {
-        font-size: 12px;
+        gap: var(--spacing-lg);
     }
 } 
