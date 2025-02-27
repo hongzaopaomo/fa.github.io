@@ -2,6 +2,21 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <!-- 添加颜色方案和主题色设置 -->
+    <meta name="color-scheme" content="light only">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="supported-color-schemes" content="light">
+    <!-- 强制使用浅色模式的样式 -->
+    <style>
+        :root {
+            color-scheme: light only;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                color-scheme: light only;
+            }
+        }
+    </style>
     <!-- 视口设置，确保响应式设计正常工作 -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -18,6 +33,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">  <!-- 图标库 -->
     
     <title>FAAID - Foundation for African Agricultural Innovation and Development</title>
+    
+    <!-- Preload critical images -->
+    <link rel="preload" as="image" href="./images/logo/logo.png">
+    <link rel="preload" as="image" href="./images/hero/silde1.jpg">
+    <link rel="preload" as="image" href="./images/hero/silde2.jpg">
+    <link rel="preload" as="image" href="./images/hero/silde3.jpg">
 </head>
 <body>
     <!-- =========================================
@@ -47,7 +68,7 @@
         <div class="navbar__header">
             <div class="navbar__top-content">
                 <div class="logo">
-                    <img src="images/logo/logo.png" alt="Logo" class="logo__img">
+                    <img src="./images/logo/logo.png" alt="Logo" class="logo__img">
                 </div>
                 <button class="menu-btn" aria-label="Open Menu">
                     <i class="fas fa-bars"></i>
@@ -137,37 +158,37 @@
         <div class="about__gallery">
             <div class="about__gallery-track">
                 <!-- 第一组图片 -->
-                <img src="images/about/gallery1.jpg" alt="Team working in agricultural field" class="about__gallery-img">
-                <img src="images/about/gallery2.jpg" alt="Digital farming technology demonstration" class="about__gallery-img">
-                <img src="images/about/gallery3.jpg" alt="Farmers training session" class="about__gallery-img">
-                <img src="images/about/gallery4.jpg" alt="Agricultural innovation showcase" class="about__gallery-img">
-                <img src="images/about/gallery5.jpg" alt="Community farming project" class="about__gallery-img">
-                <img src="images/about/gallery6.jpg" alt="Sustainable agriculture practices" class="about__gallery-img">
-                <img src="images/about/gallery7.jpg" alt="Agricultural research facility" class="about__gallery-img">
-                <img src="images/about/gallery8.jpg" alt="Smart farming solutions" class="about__gallery-img">
-                <img src="images/about/gallery9.jpg" alt="Rural development program" class="about__gallery-img">
-                <img src="images/about/gallery10.jpg" alt="Agricultural education workshop" class="about__gallery-img">
-                <img src="images/about/gallery11.jpg" alt="Technology in agriculture" class="about__gallery-img">
-                <img src="images/about/gallery12.jpg" alt="Farmer empowerment program" class="about__gallery-img">
-                <img src="images/about/gallery13.jpg" alt="Agricultural data analysis" class="about__gallery-img">
-                <img src="images/about/gallery14.jpg" alt="Community engagement" class="about__gallery-img">
-                <img src="images/about/gallery15.jpg" alt="Agricultural innovation lab" class="about__gallery-img">
+                <img src="images/about/gallery1.jpg" alt="Team working in agricultural field" class="about__gallery-img" loading="lazy">
+                <img src="images/about/gallery2.jpg" alt="Digital farming technology demonstration" class="about__gallery-img" loading="lazy">
+                <img src="images/about/gallery3.jpg" alt="Farmers training session" class="about__gallery-img" loading="lazy">
+                <img src="images/about/gallery4.jpg" alt="Agricultural innovation showcase" class="about__gallery-img" loading="lazy">
+                <img src="images/about/gallery5.jpg" alt="Community farming project" class="about__gallery-img" loading="lazy">
+                <img src="images/about/gallery6.jpg" alt="Sustainable agriculture practices" class="about__gallery-img" loading="lazy">
+                <img src="images/about/gallery7.jpg" alt="Agricultural research facility" class="about__gallery-img" loading="lazy">
+                <img src="images/about/gallery8.jpg" alt="Smart farming solutions" class="about__gallery-img" loading="lazy">
+                <img src="images/about/gallery9.jpg" alt="Rural development program" class="about__gallery-img" loading="lazy">
+                <img src="images/about/gallery10.jpg" alt="Agricultural education workshop" class="about__gallery-img" loading="lazy">
+                <img src="images/about/gallery11.jpg" alt="Technology in agriculture" class="about__gallery-img" loading="lazy">
+                <img src="images/about/gallery12.jpg" alt="Farmer empowerment program" class="about__gallery-img" loading="lazy">
+                <img src="images/about/gallery13.jpg" alt="Agricultural data analysis" class="about__gallery-img" loading="lazy">
+                <img src="images/about/gallery14.jpg" alt="Community engagement" class="about__gallery-img" loading="lazy">
+                <img src="images/about/gallery15.jpg" alt="Agricultural innovation lab" class="about__gallery-img" loading="lazy">
                 <!-- 复制第一组图片实现无缝衔接 -->
-                <img src="images/about/gallery1.jpg" alt="Team working in agricultural field" class="about__gallery-img">
-                <img src="images/about/gallery2.jpg" alt="Digital farming technology demonstration" class="about__gallery-img">
-                <img src="images/about/gallery3.jpg" alt="Farmers training session" class="about__gallery-img">
-                <img src="images/about/gallery4.jpg" alt="Agricultural innovation showcase" class="about__gallery-img">
-                <img src="images/about/gallery5.jpg" alt="Community farming project" class="about__gallery-img">
-                <img src="images/about/gallery6.jpg" alt="Sustainable agriculture practices" class="about__gallery-img">
-                <img src="images/about/gallery7.jpg" alt="Agricultural research facility" class="about__gallery-img">
-                <img src="images/about/gallery8.jpg" alt="Smart farming solutions" class="about__gallery-img">
-                <img src="images/about/gallery9.jpg" alt="Rural development program" class="about__gallery-img">
-                <img src="images/about/gallery10.jpg" alt="Agricultural education workshop" class="about__gallery-img">
-                <img src="images/about/gallery11.jpg" alt="Technology in agriculture" class="about__gallery-img">
-                <img src="images/about/gallery12.jpg" alt="Farmer empowerment program" class="about__gallery-img">
-                <img src="images/about/gallery13.jpg" alt="Agricultural data analysis" class="about__gallery-img">
-                <img src="images/about/gallery14.jpg" alt="Community engagement" class="about__gallery-img">
-                <img src="images/about/gallery15.jpg" alt="Agricultural innovation lab" class="about__gallery-img">
+                <img src="images/about/gallery1.jpg" alt="Team working in agricultural field" class="about__gallery-img" loading="lazy">
+                <img src="images/about/gallery2.jpg" alt="Digital farming technology demonstration" class="about__gallery-img" loading="lazy">
+                <img src="images/about/gallery3.jpg" alt="Farmers training session" class="about__gallery-img" loading="lazy">
+                <img src="images/about/gallery4.jpg" alt="Agricultural innovation showcase" class="about__gallery-img" loading="lazy">
+                <img src="images/about/gallery5.jpg" alt="Community farming project" class="about__gallery-img" loading="lazy">
+                <img src="images/about/gallery6.jpg" alt="Sustainable agriculture practices" class="about__gallery-img" loading="lazy">
+                <img src="images/about/gallery7.jpg" alt="Agricultural research facility" class="about__gallery-img" loading="lazy">
+                <img src="images/about/gallery8.jpg" alt="Smart farming solutions" class="about__gallery-img" loading="lazy">
+                <img src="images/about/gallery9.jpg" alt="Rural development program" class="about__gallery-img" loading="lazy">
+                <img src="images/about/gallery10.jpg" alt="Agricultural education workshop" class="about__gallery-img" loading="lazy">
+                <img src="images/about/gallery11.jpg" alt="Technology in agriculture" class="about__gallery-img" loading="lazy">
+                <img src="images/about/gallery12.jpg" alt="Farmer empowerment program" class="about__gallery-img" loading="lazy">
+                <img src="images/about/gallery13.jpg" alt="Agricultural data analysis" class="about__gallery-img" loading="lazy">
+                <img src="images/about/gallery14.jpg" alt="Community engagement" class="about__gallery-img" loading="lazy">
+                <img src="images/about/gallery15.jpg" alt="Agricultural innovation lab" class="about__gallery-img" loading="lazy">
             </div>
         </div>
     
@@ -189,16 +210,16 @@
             <div class="partners-showcase__container">
                 <!-- Partner logos with official website links -->
                 <a href="https://fmard.gov.ng" class="partner__link" target="_blank" rel="noopener noreferrer">
-                    <img src="images/partners/FMARD.jpg" alt="Federal Ministry of Agriculture and Rural Development" class="partner__logo">
+                    <img src="images/partners/FMARD.jpg" alt="Federal Ministry of Agriculture and Rural Development" class="partner__logo" loading="lazy">
                 </a>
                 <a href="https://cocoaassociationofnigeria.com/" class="partner__link" target="_blank" rel="noopener noreferrer">
-                    <img src="images/partners/CAN.jpg" alt="Cocoa Association of Nigeria" class="partner__logo">
+                    <img src="images/partners/CAN.jpg" alt="Cocoa Association of Nigeria" class="partner__logo" loading="lazy">
                 </a>
                 <a href="https://ncga.com.ng/" class="partner__link" target="_blank" rel="noopener noreferrer">
-                    <img src="images/partners/NCGA.jpg" alt="Nigeria Cassava Growers Association" class="partner__logo">
+                    <img src="images/partners/NCGA.jpg" alt="Nigeria Cassava Growers Association" class="partner__logo" loading="lazy">
                 </a>
                 <a href="https://hongzaopaomo.github.io/AIEA/" class="partner__link" target="_blank" rel="noopener noreferrer">
-                    <img src="images/partners/AIEA.jpg" alt="Agricultural Innovation and Extension Alliance" class="partner__logo">
+                    <img src="images/partners/AIEA.jpg" alt="Agricultural Innovation and Extension Alliance" class="partner__logo" loading="lazy">
                 </a>
             </div>
         </div>
@@ -230,7 +251,7 @@
                             </div>
                             <a href="#" class="learn-more-btn">Learn more</a>
                         </div>
-                        <img src="images/focus-areas/agritech/agritech1.jpg" alt="Precision Farming" class="agritech-card__image">
+                        <img src="images/focus-areas/agritech/agritech1.jpg" alt="Precision Farming" class="agritech-card__image" loading="lazy">
                     </div>
 
                     <div class="agritech-card">
@@ -242,7 +263,7 @@
                             </div>
                             <a href="#" class="learn-more-btn">Learn more</a>
                         </div>
-                        <img src="images/focus-areas/agritech/agritech2.jpg" alt="Smart Agricultural Machinery" class="agritech-card__image">
+                        <img src="images/focus-areas/agritech/agritech2.jpg" alt="Smart Agricultural Machinery" class="agritech-card__image" loading="lazy">
                     </div>
 
                     <div class="agritech-card">
@@ -254,7 +275,7 @@
                             </div>
                             <a href="#" class="learn-more-btn">Learn more</a>
                         </div>
-                        <img src="images/focus-areas/agritech/agritech3.jpg" alt="Smart Agricultural Machinery" class="agritech-card__image">
+                        <img src="images/focus-areas/agritech/agritech3.jpg" alt="Smart Agricultural Machinery" class="agritech-card__image" loading="lazy">
                     </div>
                 </div>
             </div>
@@ -278,7 +299,7 @@
                             </div>
                             <a href="#" class="learn-more-btn">Learn more</a>
                         </div>
-                        <img src="images/focus-areas/education/agriedu1.jpg" alt="Farmer Training Program" class="agriedu-card__image">
+                        <img src="images/focus-areas/education/agriedu1.jpg" alt="Farmer Training Program" class="agriedu-card__image" loading="lazy">
                     </div>
 
                     <div class="agriedu-card">
@@ -290,7 +311,7 @@
                             </div>
                             <a href="#" class="learn-more-btn">Learn more</a>
                         </div>
-                        <img src="images/focus-areas/education/agriedu2.jpg" alt="Digital Skills Workshop" class="agriedu-card__image">
+                        <img src="images/focus-areas/education/agriedu2.jpg" alt="Digital Skills Workshop" class="agriedu-card__image" loading="lazy">
                     </div>
 
                     <div class="agriedu-card">
@@ -302,7 +323,7 @@
                             </div>
                             <a href="#" class="learn-more-btn">Learn more</a>
                         </div>
-                        <img src="images/focus-areas/education/agriedu3.jpg" alt="Youth in Agriculture" class="agriedu-card__image">
+                        <img src="images/focus-areas/education/agriedu3.jpg" alt="Youth in Agriculture" class="agriedu-card__image" loading="lazy">
                     </div>
                 </div>
             </div>
@@ -320,7 +341,7 @@
             <!-- 主要新闻 -->
             <div class="latest-news__featured">
                 <div class="image-card">
-                    <img src="images/news/news1.jpg" alt="News 1" class="image-card__img">
+                    <img src="images/news/news1.jpg" alt="News 1" class="image-card__img" loading="lazy">
                     <div class="image-card__content">
                         <h3 class="image-card__title">AGCO Agriculture Foundation Launches Call for Applications for Grant Cycle</h3>
                         <p class="image-card__summary">The AGCO Agriculture Foundation announces its latest grant cycle, focusing on sustainable farming practices and technological innovation in African agriculture. This initiative aims to support projects that enhance food security and agricultural productivity across the continent.</p>
@@ -333,7 +354,7 @@
             <div class="latest-news__list">
                 <!-- 其他新闻卡片 -->
                 <div class="image-card image-card--horizontal">
-                    <img src="images/news/news2.jpg" alt="News 2" class="image-card__img">
+                    <img src="images/news/news2.jpg" alt="News 2" class="image-card__img" loading="lazy">
                     <div class="image-card__content">
                         <h3 class="image-card__title">Sustainable Agriculture Initiative Expands to New Regions</h3>
                         <p class="image-card__summary">The sustainable agriculture program has successfully expanded to five new regions, bringing innovative farming practices and support to local communities.</p>
@@ -342,7 +363,7 @@
                 </div>
 
                 <div class="image-card image-card--horizontal">
-                    <img src="images/news/news3.jpg" alt="News 3" class="image-card__img">
+                    <img src="images/news/news3.jpg" alt="News 3" class="image-card__img" loading="lazy">
                     <div class="image-card__content">
                         <h3 class="image-card__title">Digital Innovation in Agriculture: A New Partnership</h3>
                         <p class="image-card__summary">A groundbreaking partnership between tech firms and agricultural organizations promises to revolutionize farming practices through digital innovation.</p>
@@ -351,7 +372,7 @@
                 </div>
 
                 <div class="image-card image-card--horizontal">
-                    <img src="images/news/news4.jpg" alt="News 4" class="image-card__img">
+                    <img src="images/news/news4.jpg" alt="News 4" class="image-card__img" loading="lazy">
                     <div class="image-card__content">
                         <h3 class="image-card__title">Youth in Agriculture: New Training Program Launched</h3>
                         <p class="image-card__summary">An innovative training program targeting young farmers has been launched, focusing on modern agricultural techniques and sustainable farming practices.</p>
@@ -360,7 +381,7 @@
                 </div>
 
                 <div class="image-card image-card--horizontal">
-                    <img src="images/news/news5.jpg" alt="News 5" class="image-card__img">
+                    <img src="images/news/news5.jpg" alt="News 5" class="image-card__img" loading="lazy">
                     <div class="image-card__content">
                         <h3 class="image-card__title">Agricultural Technology Summit 2024: Key Takeaways</h3>
                         <p class="image-card__summary">The recent Agricultural Technology Summit brought together industry leaders to discuss the future of farming, highlighting key innovations and trends.</p>
@@ -369,7 +390,7 @@
                 </div>
 
                 <div class="image-card image-card--horizontal">
-                    <img src="images/news/news6.jpg" alt="News 6" class="image-card__img">
+                    <img src="images/news/news6.jpg" alt="News 6" class="image-card__img" loading="lazy">
                     <div class="image-card__content">
                         <h3 class="image-card__title">Sustainable Farming Practices: Research Results Released</h3>
                         <p class="image-card__summary">New research findings demonstrate the positive impact of sustainable farming practices on crop yields and environmental conservation.</p>
