@@ -16,7 +16,7 @@
     line-height: 1.2;
     padding-left: 24px;
     margin: 0;
-    text-transform: capitalize;
+    text-transform: uppercase;  /* 全大写 */
 }
 
 /* 装饰线 */

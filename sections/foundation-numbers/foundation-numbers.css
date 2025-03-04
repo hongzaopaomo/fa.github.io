@@ -20,7 +20,7 @@
 /* 1. 整体布局 */
 .foundation-numbers-section {
     width: 100%;
-    background-color: var(--color-hero);
+    background-color: var(--color-background);
     position: relative;
     padding: var(--spacing-xxl);
     padding-bottom: var(--spacing-xxxl);
@@ -43,7 +43,7 @@
     }
 
     .foundation-numbers-section .section-header {
-        padding-left: 24px;
+        padding-left: var(--spacing-md);
     }
 
     .foundation-numbers-section .section-title {
@@ -58,7 +58,7 @@
     }
 
     .foundation-numbers-section .section-header {
-        padding-left: 20px;
+        padding-left: var(--spacing-sm);
     }
 
     .foundation-numbers-section .section-title {
@@ -66,9 +66,9 @@
     }
 
     .foundation-numbers-section .section-title::before {
-        left: -20px;
-        height: 24px;
-        width: 12px;
+        left: calc(-1 * var(--spacing-sm));
+        height: var(--spacing-md);
+        width: var(--spacing-xs);
     }
 }
 
@@ -80,18 +80,18 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 1fr);
-    gap: 24px;
+    gap: var(--spacing-md);
 }
 
 /* 4. 数据卡片 */
 /* 基础样式 */
 .numbers-card {
     background: var(--color-border);
-    border-radius: 8px;
-    padding: 24px;
+    border-radius: var(--border-radius-md);
+    padding: var(--spacing-md);
     position: relative;
     overflow: hidden;
-    transition: all 0.3s ease;
+    transition: all var(--transition-medium);
 }
 
 /* 大卡片样式 */
@@ -103,31 +103,33 @@
 
 /* 标题和数值 */
 .numbers-card__title {
-    font-size: 24px;
-    font-weight: normal;
+    font-family: var(--font-heading);
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-regular);
     color: var(--color-primary);
 }
 
 .numbers-card__value {
+    font-family: var(--font-heading);
     font-size: var(--font-size-xxxxxl);
-    font-weight: bold;
+    font-weight: var(--font-weight-bold);
     color: var(--color-primary); 
 }
 
 /* 谷物图标 */
 .numbers-card__icons {
     display: flex;
-    gap: 24px;
-    margin-top: 24px;
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-md);
 }
 
 .grain-icon {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 8px;
+    gap: var(--spacing-xs);
     background-color: var(--color-background);
-    padding: 8px;
+    padding: var(--spacing-xs);
     border-radius: var(--border-radius-md);
     width: 88px;
     transition: transform var(--transition-normal);
@@ -144,7 +146,9 @@
 }
 
 .grain-icon span {
-    font-size: 14px;
+    font-family: var(--font-body);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-regular);
     color: var(--color-text-light);
     text-align: center;
     word-break: break-word;
@@ -167,7 +171,7 @@
     background-size: cover;
     background-position: center;
     opacity: 0;
-    transition: opacity 0.3s ease;
+    transition: opacity var(--transition-medium);
     z-index: -1;
 }
 
@@ -190,7 +194,7 @@
 
 .numbers-card:not(.numbers-card--large):hover {
     transform: translateY(-4px);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    box-shadow: var(--shadow-md);
 }
 
 .numbers-card:not(.numbers-card--large):hover::before {
@@ -199,7 +203,7 @@
 
 .numbers-card:not(.numbers-card--large):hover .numbers-card__title,
 .numbers-card:not(.numbers-card--large):hover .numbers-card__value {
-    color: #FFFFFF;
+    color: var(--color-white);
     position: relative;
     z-index: 1;
 }
@@ -225,7 +229,7 @@
     }
 
     .numbers-card__icons {
-        gap: 16px;
+        gap: var(--spacing-sm);
     }
 
     .grain-icon img {
@@ -234,6 +238,6 @@
     }
 
     .grain-icon span {
-        font-size: 12px;
+        font-size: var(--font-size-xs);
     }
 } 

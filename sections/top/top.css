@@ -3,7 +3,7 @@
     width: 100%;
     height: auto;
     position: relative;
-    z-index: 99999;
+    z-index: var(--z-normal);
     padding: 0;
     margin: 0;
     display: block;
@@ -14,7 +14,7 @@
 .navbar__header {
     width: 100%;
     height: 152px;
-    padding: 18px 50px;
+    padding: 18px var(--spacing-xl);
     background-color: var(--color-primary);
     position: relative;
     margin: 0;
@@ -50,9 +50,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--color-background);
+    color: var(--color-white);
     font-size: var(--font-size-xl);
-    transition: transform 0.3s ease;
+    font-family: var(--font-body);
+    transition: transform var(--transition-medium);
 }
 
 .menu-btn:hover {
@@ -68,8 +69,8 @@
     height: 100vh;
     background-color: var(--color-primary);
     transform: translateX(100%);
-    transition: transform 0.3s ease;
-    z-index: 100000;
+    transition: transform var(--transition-medium);
+    z-index: var(--z-max);
     padding: var(--spacing-xxl) var(--spacing-xl);
 }
 
@@ -86,6 +87,7 @@
     background: none;
     color: var(--color-white);
     font-size: var(--font-size-xl);
+    font-family: var(--font-body);
     cursor: pointer;
     padding: var(--spacing-sm);
 }
@@ -101,9 +103,11 @@
 .side-menu__link {
     color: var(--color-white);
     text-decoration: none;
+    font-family: var(--font-body);
     font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-medium);
     padding: var(--spacing-sm) 0;
-    transition: color 0.3s ease;
+    transition: color var(--transition-medium);
 }
 
 .side-menu__link:hover {
@@ -117,11 +121,11 @@
     left: 0;
     width: 100%;
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: var(--color-overlay);
     opacity: 0;
     visibility: hidden;
-    transition: all 0.3s ease;
-    z-index: 99999;
+    transition: all var(--transition-medium);
+    z-index: var(--z-popup);
 }
 
 .menu-overlay.active {
@@ -133,7 +137,7 @@
 @media (max-width: 768px) {
     .navbar__header {
         height: 90px;
-        padding: 12px 20px;
+        padding: 12px var(--spacing-md);
     }
 
     .logo__img {
@@ -160,7 +164,7 @@
 @media (max-width: 480px) {
     .navbar__header {
         height: 70px;
-        padding: 10px 15px;
+        padding: 10px var(--spacing-sm);
     }
 
     .logo__img {

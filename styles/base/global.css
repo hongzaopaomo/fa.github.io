@@ -1,6 +1,12 @@
+/* 导入Inter字体 */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
 /* 全局滚动行为 */
 html {
     scroll-behavior: smooth;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 /* 全局图片处理 */
@@ -13,8 +19,12 @@ img {
 /* 全局链接样式 */
 a {
     text-decoration: none;
-    color: inherit;
-    transition: color 0.3s ease;
+    color: var(--color-primary);
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: var(--color-primary-dark);
 }
 
 /* 全局按钮样式 */
@@ -22,7 +32,8 @@ button {
     cursor: pointer;
     border: none;
     background: none;
-    font-family: inherit;
+    font-family: var(--font-body);
+    font-weight: var(--font-weight-medium);
 }
 
 /* 全局列表样式 */
@@ -34,32 +45,58 @@ ul, ol {
 
 /* 全局表单元素样式 */
 input, select, textarea {
-    font-family: inherit;
-    font-size: inherit;
+    font-family: var(--font-body);
 }
 
 /* 全局字体设置 */
 body {
-    font-family: 'Helvetica', 'Helvetica Neue', Arial, sans-serif;
-    line-height: 1.6;
+    font-family: var(--font-body);
+    font-size: var(--font-size-md);
+    line-height: var(--line-height-normal);
     color: var(--color-text);
+    background-color: var(--color-background);
+    margin: 0;
+    padding: 0;
 }
 
 /* 确保标题也使用相同的字体 */
-h1, h2, h3, h4, h5, h6 {
-    font-family: 'Helvetica', 'Helvetica Neue', Arial, sans-serif;
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family: var(--font-heading);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-tight);
+    letter-spacing: var(--letter-spacing-tight);
+    color: var(--color-heading);
+    margin-top: 0;
+    margin-bottom: 0.5em;
+}
+
+h1, .h1 { font-size: var(--font-size-h1); }
+h2, .h2 { font-size: var(--font-size-h2); }
+h3, .h3 { font-size: var(--font-size-h3); }
+h4, .h4 { font-size: var(--font-size-h4); }
+h5, .h5 { font-size: var(--font-size-h5); }
+h6, .h6 { font-size: var(--font-size-h6); }
+
+/* 段落和文本样式 */
+p {
+    font-family: var(--font-body);
+    margin-top: 0;
+    margin-bottom: 1rem;
 }
 
 /* 禁止滚动类 */
 .no-scroll {
     overflow: hidden;
+    height: 100%;
 }
 
 /* 响应式容器 */
 .container {
-    max-width: 1200px;
+    width: 100%;
+    max-width: var(--content-width);
     margin: 0 auto;
-    padding: 0 10px;
+    padding: 0 var(--spacing-md);
 }
 
 /* 响应式设计基础 */
@@ -67,4 +104,54 @@ h1, h2, h3, h4, h5, h6 {
     .container {
         padding: 0 var(--spacing-sm);
     }
-} 
+}
+
+/* 辅助类 */
+.text-heading {
+    font-family: var(--font-heading) !important;
+}
+
+.text-body {
+    font-family: var(--font-body) !important;
+}
+
+.font-regular { font-weight: var(--font-weight-regular); }
+.font-medium { font-weight: var(--font-weight-medium); }
+.font-semibold { font-weight: var(--font-weight-semibold); }
+.font-bold { font-weight: var(--font-weight-bold); }
+
+/* 文本尺寸辅助类 */
+.text-xs { font-size: var(--font-size-xs); }
+.text-sm { font-size: var(--font-size-sm); }
+.text-md { font-size: var(--font-size-md); }
+.text-lg { font-size: var(--font-size-lg); }
+.text-xl { font-size: var(--font-size-xl); }
+
+/* 文本对齐 */
+.text-left { text-align: left; }
+.text-center { text-align: center; }
+.text-right { text-align: right; }
+
+/* 文本装饰 */
+.text-underline { text-decoration: underline; }
+.text-uppercase { text-transform: uppercase; }
+.text-capitalize { text-transform: capitalize; }
+.text-truncate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* 颜色辅助类 */
+.text-primary { color: var(--color-primary); }
+.text-secondary { color: var(--color-secondary); }
+.text-white { color: var(--color-white); }
+.bg-primary { background-color: var(--color-primary); }
+.bg-secondary { background-color: var(--color-secondary); }
+.bg-white { background-color: var(--color-white); }
+
+/* 间距辅助类 */
+.mt-0 { margin-top: 0; }
+.mb-0 { margin-bottom: 0; }
+.my-0 { margin-top: 0; margin-bottom: 0; }
+.mx-auto { margin-left: auto; margin-right: auto; } 

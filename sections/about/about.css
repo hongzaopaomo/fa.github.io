@@ -14,7 +14,7 @@
     position: relative;
     height: auto;
     background-color: var(--color-background);
-    padding-bottom: var(--spacing-xxxxxxl);
+    padding-bottom: var(--spacing-xxxxl);
     padding-top: var(--spacing-md);
     padding-left: var(--spacing-xxl);
     padding-right: var(--spacing-xxl);
@@ -50,14 +50,10 @@
     transition: transform var(--transition-normal);
 }
 
-.about__gallery-img:hover {
-    transform: scale(1.05);
-}
-
 /* 4. 内容区域 */
 .about__content {
-    padding-top: var(--spacing-lg);
-    width: 100%; /* 与图片区域宽度一致 */
+    padding-top: var(--spacing-xl);
+    width: 88.8%; /* 与图片区域宽度一致 */
     height: auto;
     min-height: 240px;
     display: flex;
@@ -66,17 +62,23 @@
 }
 
 .about__text {
+    font-family: var(--font-body);
     font-size: var(--font-size-xl);
-    line-height: 1.4;
+    font-weight: var(--font-weight-regular);
+    line-height: var(--line-height-relaxed);
     color: var(--color-text);
     text-align: left;
     margin: 0;
+    text-align: justify
 }
 
 .about__text--large {
-    font-size: var(--font-size-xxl);
-    line-height: 1.4;
-    margin-bottom: var(--spacing-lg);
+    font-family: var(--font-body);
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-regular);
+    line-height: var(--line-height-relaxed);
+    margin-bottom: var(--spacing-md);
+    text-align: justify
 }
 
 /* 5. 行动按钮 */
