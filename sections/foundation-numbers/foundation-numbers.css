@@ -177,19 +177,19 @@
 
 /* 为每个卡片设置对应的背景图片 */
 .numbers-card:nth-child(1)::before {
-    background-image: url('https://cdn.jsdelivr.net/gh/hongzaopaomo/fa.github.io@main/images/numbers/cocoa.jpg');
+    background-image: url('https://hongzaopaomo.github.io/fa.github.io/images/numbers/cocoa.jpg');
 }
 
 .numbers-card:nth-child(2)::before {
-    background-image: url('https://cdn.jsdelivr.net/gh/hongzaopaomo/fa.github.io@main/images/numbers/farmers.jpg');
+    background-image: url('https://hongzaopaomo.github.io/fa.github.io/images/numbers/farmers.jpg');
 }
 
 .numbers-card:nth-child(4)::before {
-    background-image: url('https://cdn.jsdelivr.net/gh/hongzaopaomo/fa.github.io@main/images/numbers/reemployment.jpg');
+    background-image: url('https://hongzaopaomo.github.io/fa.github.io/images/numbers/reemployment.jpg');
 }
 
 .numbers-card:nth-child(5)::before {
-    background-image: url('https://cdn.jsdelivr.net/gh/hongzaopaomo/fa.github.io@main/images/numbers/schools.jpg');
+    background-image: url('https://hongzaopaomo.github.io/fa.github.io/images/numbers/schools.jpg');
 }
 
 .numbers-card:not(.numbers-card--large):hover {
