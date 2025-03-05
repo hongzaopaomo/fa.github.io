@@ -34,8 +34,11 @@ document.addEventListener('keydown', (e) => {
     }
 });
 
-// 更新 hero section 中的 Contact Us 按钮链接
+// 更新 hero section 中的按钮链接
 document.querySelector('.hero__buttons .btn-primary').setAttribute('href', '#contact');
+
+// 将hero区域的"Our Projects"按钮链接设置为focus-areas
+document.querySelector('.hero__buttons .btn-outline').setAttribute('href', '#focus-areas');
 
 // 处理Projects下拉菜单
 const projectsDropdownLink = document.querySelector('.nav-links__link.has-dropdown');
@@ -143,11 +146,20 @@ const contactBtn = document.querySelector('.hero__buttons .btn-primary');
 const closeModalBtn = document.querySelector('.contact-modal__close');
 const copyBtn = document.querySelector('.contact-modal__copy-btn');
 
-// Open modal
+// Open modal - 修改为跳转到底部
 contactBtn.addEventListener('click', (e) => {
     e.preventDefault();
-    contactModal.classList.add('active');
-    document.body.classList.add('no-scroll');
+    // 滚动到页面底部
+    const footerSection = document.querySelector('.footer-section');
+    if (footerSection) {
+        footerSection.scrollIntoView({ behavior: 'smooth' });
+    } else {
+        // 如果找不到footer元素，就滚动到文档最底部
+        window.scrollTo({
+            top: document.body.scrollHeight,
+            behavior: 'smooth'
+        });
+    }
 });
 
 // Close modal
@@ -206,8 +218,17 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         
         const targetId = this.getAttribute('href');
         if (targetId === '#contact') {
-            // 显示联系我们弹窗
-            if (contactModal) contactModal.style.display = 'flex';
+            // 滚动到页面底部
+            const footerSection = document.querySelector('.footer-section');
+            if (footerSection) {
+                footerSection.scrollIntoView({ behavior: 'smooth' });
+            } else {
+                // 如果找不到footer元素，就滚动到文档最底部
+                window.scrollTo({
+                    top: document.body.scrollHeight,
+                    behavior: 'smooth'
+                });
+            }
             return;
         }
         
@@ -218,45 +239,33 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         if (targetId === '#about-section') {
             // 查找About标题
             titleText = 'about us';
-            const sectionTitles = document.querySelectorAll('.section-title');
-            for (const title of sectionTitles) {
-                if (title.textContent.trim().toLowerCase() === titleText) {
-                    targetElement = title.closest('.section-header');
-                    break;
-                }
-            }
         } else if (targetId === '#foundation-numbers-section') {
             // 查找Foundation Numbers标题
             titleText = 'Foundation Numbers';
-            const sectionTitles = document.querySelectorAll('.section-title');
-            for (const title of sectionTitles) {
-                if (title.textContent.trim() === titleText) {
-                    targetElement = title.closest('.section-header');
-                    break;
-                }
-            }
         } else if (targetId === '#agritech-section') {
             // 查找Agriculture Tech标题
             titleText = 'Projects: Agriculture Tech';
-            const sectionTitles = document.querySelectorAll('.section-title');
-            for (const title of sectionTitles) {
-                if (title.textContent.trim() === titleText) {
-                    targetElement = title.closest('.section-header');
-                    break;
-                }
-            }
         } else if (targetId === '#agriedu-section') {
             // 查找Agriculture Edu标题
             titleText = 'Projects: Agricultural Edu';
+        } else if (targetId === '#focus-areas') {
+            // focus-areas实际对应"Projects: Agriculture Tech"标题
+            titleText = 'Projects: Agriculture Tech';
+        }
+        
+        // 根据标题文本查找对应的section title元素
+        if (titleText) {
             const sectionTitles = document.querySelectorAll('.section-title');
             for (const title of sectionTitles) {
-                if (title.textContent.trim() === titleText) {
+                if (title.textContent.trim().toLowerCase() === titleText.toLowerCase()) {
                     targetElement = title.closest('.section-header');
                     break;
                 }
             }
-        } else {
-            // 其他链接正常处理
+        }
+        
+        // 如果没有找到特定的标题元素，则尝试直接使用ID查找
+        if (!targetElement) {
             targetElement = document.querySelector(targetId);
         }
         
@@ -268,10 +277,14 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 if (menuOverlay) menuOverlay.classList.remove('active');
             }
             
-            // 获取目标元素位置
-            const headerOffset = 80; // 导航栏高度 + 一些额外空间
+            // 获取目标元素的精确位置
             const elementPosition = targetElement.getBoundingClientRect().top;
-            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+            
+            // 考虑导航栏高度
+            const navHeight = 81; // nav-links-section的高度
+            
+            // 计算偏移位置，减去导航栏高度，以避免内容被导航栏遮挡
+            const offsetPosition = elementPosition + window.pageYOffset - navHeight;
             
             // 滚动到目标位置
             window.scrollTo({
@@ -283,7 +296,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             if (sectionIndicator) {
                 let sectionName = '';
                 if (targetId === '#about-section') sectionName = 'About Us';
-                else if (targetId === '#focus-areas') sectionName = 'Projects';
+                else if (targetId === '#focus-areas') sectionName = 'Agriculture Tech';
                 else if (targetId === '#agritech-section') sectionName = 'Agriculture Tech';
                 else if (targetId === '#agriedu-section') sectionName = 'Agriculture Edu';
                 else if (targetId === '#foundation-numbers-section') sectionName = 'Our Foundation Numbers';
