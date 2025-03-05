@@ -154,4 +154,43 @@ p {
 .mt-0 { margin-top: 0; }
 .mb-0 { margin-bottom: 0; }
 .my-0 { margin-top: 0; margin-bottom: 0; }
-.mx-auto { margin-left: auto; margin-right: auto; } 
+.mx-auto { margin-left: auto; margin-right: auto; }
+
+/* 移动端全局优化 */
+@media (max-width: 480px) {
+    html {
+        font-size: 14px;
+    }
+    
+    body {
+        font-size: var(--font-size-sm);
+    }
+    
+    h1, .h1 { font-size: var(--font-size-h2); }
+    h2, .h2 { font-size: var(--font-size-h3); }
+    h3, .h3 { font-size: var(--font-size-h4); }
+    h4, .h4 { font-size: var(--font-size-h5); }
+    h5, .h5 { font-size: var(--font-size-h6); }
+    h6, .h6 { font-size: var(--font-size-lg); }
+    
+    .container {
+        padding: 0 var(--spacing-xs);
+    }
+    
+    /* 改善移动端点击区域 */
+    button, 
+    a.btn,
+    .nav-links__link,
+    .side-menu__link {
+        min-height: 44px;
+        min-width: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    /* 减少段落间距 */
+    p {
+        margin-bottom: 0.75rem;
+    }
+} 

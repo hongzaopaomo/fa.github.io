@@ -120,7 +120,7 @@
     left: 0;
     width: 100%;
     height: 40px;
-    background-color: var(--color-secondary);
+    background-color: var(--color-primary);
     color: var(--color-hero);
     z-index: var(--z-dropdown);
     align-items: center;
@@ -152,7 +152,27 @@
     transform: scaleX(1);
 }
 
-/* 平板及小屏适配 */
+/* 响应式设计 */
+@media (max-width: 1024px) {
+    .nav-links-section {
+        height: 44px;
+    }
+    
+    .nav-links__link {
+        font-size: var(--font-size-sm);
+        padding: 0 var(--spacing-sm);
+    }
+    
+    .nav-links__dropdown {
+        min-width: 180px;
+    }
+    
+    .nav-links__dropdown-link {
+        padding: var(--spacing-sm) var(--spacing-md);
+    }
+}
+
+/* 平板适配 */
 @media (max-width: 768px) {
     .nav-links-section {
         display: none; /* 在移动端隐藏导航链接，使用侧边菜单代替 */
@@ -160,6 +180,11 @@
 
     .current-section-indicator {
         display: flex; /* 在移动端显示当前section指示器 */
+        height: 40px;
+    }
+    
+    .current-section-indicator__text {
+        font-size: var(--font-size-md);
     }
 
     .nav-links__container {
@@ -180,20 +205,39 @@
     }
 }
 
-/* 适配更小屏幕（如 iPhone SE） */
+/* 手机适配 */
 @media (max-width: 480px) {
+    .current-section-indicator {
+        height: 40px;
+    }
+    
+    .current-section-indicator__text {
+        font-size: var(--font-size-sm);
+    }
+    
     .nav-links__container {
-        padding: var(--spacing-xxs) 0;
-        gap: var(--spacing-sm);
+        padding: 0 var(--spacing-sm);
+        height: 50px;
     }
-
+    
     .nav-links__link {
-        height: 32px;
-        font-size: var(--font-size-xs); /* 12px */
+        font-size: var(--font-size-sm);
+        padding: 0 var(--spacing-xs);
     }
-
+    
     .nav-links__link:hover,
     .nav-links__link.active {
-        font-size: var(--font-size-sm); /* 14px */
+        font-weight: var(--font-weight-semibold);
+    }
+    
+    .nav-links__dropdown {
+        width: 150px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    .nav-links__dropdown-link {
+        font-size: var(--font-size-xs);
+        padding: var(--spacing-xs);
     }
 }

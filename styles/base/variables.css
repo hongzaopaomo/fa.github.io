@@ -119,4 +119,14 @@
     --letter-spacing-tight: -0.02em;
     --letter-spacing-normal: 0;
     --letter-spacing-wide: 0.02em;
+
+    /* 移动端专用变量 */
+    --mobile-spacing-base: 8px;
+    --mobile-nav-height: 80px;
+    --mobile-btn-height: 45px;
+    --mobile-header-height: 60px;
+    --mobile-card-padding: 12px;
+    --mobile-section-padding: 24px;
+    --mobile-font-size-base: 14px;
+    --mobile-input-height: 40px;
 }

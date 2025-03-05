@@ -146,12 +146,35 @@
     pointer-events: auto;
 }
 
-/* 移动端适配 */
+/* 响应式设计 */
+@media (max-width: 1024px) {
+    /* 顶部区域 - 大屏平板 */
+    .navbar__header {
+        padding: var(--spacing-md) var(--spacing-lg);
+        height: 100px;
+    }
+    
+    .navbar__top-content {
+        max-width: 100%;
+    }
+    
+    .logo__img {
+        min-width: 70px;
+        max-height: 100px;
+    }
+    
+    /* 菜单按钮 - 大屏平板 */
+    .menu-btn {
+        font-size: var(--font-size-xl);
+    }
+}
+
+/* 移动端适配 - 平板 */
 @media (max-width: 768px) {
     /* 顶部区域 - 平板 */
     .navbar__header {
         padding: var(--spacing-md);
-        height: 120px;
+        height: 90px;
     }
     
     .navbar__top-content {
@@ -182,45 +205,48 @@
 
 /* 小屏幕手机适配 */
 @media (max-width: 480px) {
-    /* 顶部区域 - 手机 */
     .navbar__header {
-        padding: var(--spacing-sm) var(--spacing-md);
         height: 80px;
+        padding: var(--spacing-xs) var(--spacing-sm);
+    }
+    
+    .navbar__top-content {
+        padding: 0;
     }
     
     .logo__img {
-        min-width: 40px;
-        max-height: 40px;
+        max-height: 60px;
+        min-width: 60px;
     }
     
-    /* 菜单按钮 - 手机 */
     .menu-btn {
-        font-size: var(--font-size-lg);
+        font-size: var(--font-size-h5);
         width: 40px;
         height: 40px;
-        margin-left: var(--spacing-sm);
     }
     
-    /* 侧边菜单 - 手机 */
     .side-menu {
-        padding: var(--spacing-lg);
-        width: 90%;
+        width: 85%;
     }
     
     .side-menu__close {
-        top: var(--spacing-sm);
-        right: var(--spacing-sm);
-        font-size: var(--font-size-xl);
+        font-size: var(--font-size-h5);
+        top: var(--spacing-xs);
+        right: var(--spacing-xs);
     }
     
     .side-menu__links {
-        margin-top: var(--spacing-lg);
-        gap: var(--spacing-sm);
-        padding: 0 var(--spacing-md);
+        margin-top: var(--spacing-xl);
+        padding: var(--spacing-sm);
     }
     
     .side-menu__link {
-        padding: var(--spacing-sm) 0;
-        border-bottom: 1px solid var(--color-border);
+        font-size: var(--font-size-md);
+        padding: var(--spacing-xs) 0;
+    }
+    
+    .side-menu__sublink {
+        font-size: var(--font-size-sm);
+        padding: var(--spacing-xxs) 0 var(--spacing-xxs) var(--spacing-md);
     }
 } 

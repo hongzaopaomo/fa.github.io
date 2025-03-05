@@ -160,8 +160,8 @@
     📱 7. 响应式适配
 ========================== */
 
-/* 🌟 平板 & 手机通用优化 */
-@media (max-width: var(--breakpoint-lg)) { /* 替换为变量 */
+/* 🌟 平板适配 */
+@media (max-width: 1024px) {
     .hero__top {
         height: 90px;
         padding: var(--spacing-xs) var(--spacing-md);
@@ -190,8 +190,8 @@
     }
 }
 
-/* 📱 小屏幕优化（手机） */
-@media (max-width: var(--breakpoint-sm)) { /* 替换为变量 */
+/* 📱 中屏幕适配（平板） */
+@media (max-width: 768px) {
     .hero__top {
         height: 120px;
         padding: var(--spacing-md);
@@ -210,51 +210,61 @@
         font-size: var(--font-size-h3);
     }
     
-    
     .btn {
         width: 160px;
         height: 56px;
     }
 }
 
-@media (max-width: var(--breakpoint-xs)) { /* 替换为变量 */
+/* 📱 小屏幕适配（手机） */
+@media (max-width: 480px) {
     .hero__top {
-        height: 100px;
-        padding: var(--spacing-sm);
+        height: 80px;
+        padding: var(--spacing-xs) var(--spacing-sm);
     }
     
     .hero__main {
-        height: calc(var(--hero-height) - 100px);
+        min-height: calc(100vh - 80px);
     }
     
     .logo__img {
-        max-height: 70px;
-        min-width: 70px;
+        max-height: 60px;
+        min-width: 60px;
     }
     
     .menu-btn {
-        font-size: var(--font-size-h4); /* 替换硬编码值 */
+        font-size: var(--font-size-h5);
     }
     
     .hero__content {
-        padding: var(--spacing-lg);
+        padding: var(--spacing-md);
+        align-items: center;
     }
     
     .hero__title {
-        font-size: var(--font-size-h3);
-        margin-bottom: var(--spacing-xl);
+        font-size: 32px;
+        margin-bottom: var(--spacing-lg);
+        text-align: center;
+        font-weight: var(--font-weight-bold);
+        letter-spacing: 0.5px;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        line-height: 1.2;
+        color: #fff;
     }
-    
     
     .hero__buttons {
         gap: var(--spacing-sm);
-        margin-top: var(--spacing-md);
+        margin-top: var(--spacing-sm);
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
     }
     
     .btn {
-        width: 150px;
-        height: 50px;
-        min-height: 50px;
+        width: 100%;
+        max-width: 200px;
+        height: 45px;
+        min-height: 45px;
         font-size: var(--font-size-sm);
     }
 }

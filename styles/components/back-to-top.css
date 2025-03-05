@@ -52,12 +52,13 @@
     .back-to-top {
         right: 16px;
         bottom: 16px;
-        width: 40px;
-        height: 40px;
+        width: 56px;  /* 增加按钮尺寸 */
+        height: 56px; /* 增加按钮尺寸 */
+        background: var(--color-primary); /* 确保颜色统一 */
     }
 
     .back-to-top i {
-        font-size: 20px;  /* 移动端稍微减小图标尺寸 */
+        font-size: 22px;  /* 增大图标尺寸 */
     }
 }
 
@@ -65,11 +66,12 @@
     .back-to-top {
         right: 12px;
         bottom: 12px;
-        width: 36px;
-        height: 36px;
+        width: 48px;  /* 增加按钮尺寸 */
+        height: 48px; /* 增加按钮尺寸 */
+        background: var(--color-primary); /* 确保颜色统一 */
     }
 
     .back-to-top i {
-        font-size: 18px;
+        font-size: 20px; /* 增大图标尺寸 */
     }
 } 

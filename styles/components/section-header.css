@@ -73,7 +73,7 @@
     }
 
     .section-title {
-        font-size: calc(var(--font-size-h1) * 0.6);
+        font-size: var(--font-size-h4);
         padding-left: 12px;
     }
 
