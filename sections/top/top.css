@@ -175,4 +175,26 @@
     .menu-btn {
         font-size: var(--font-size-md);
     }
+    
+    /* Improved mobile navigation */
+    .side-menu__links {
+        margin-top: var(--spacing-xl);
+        gap: var(--spacing-md);
+    }
+    
+    .side-menu__link {
+        font-size: var(--font-size-md);
+        padding: var(--spacing-md) 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .side-menu__close {
+        top: var(--spacing-md);
+        right: var(--spacing-md);
+        font-size: var(--font-size-lg);
+    }
+    
+    .side-menu {
+        padding: var(--spacing-xl) var(--spacing-lg);
+    }
 } 

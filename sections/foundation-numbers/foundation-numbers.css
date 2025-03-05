@@ -240,4 +240,45 @@
     .grain-icon span {
         font-size: var(--font-size-xs);
     }
+}
+
+/* 小屏幕移动端适配 */
+@media (max-width: 480px) {
+    .foundation-numbers__main {
+        gap: var(--spacing-sm);
+    }
+    
+    .numbers-card {
+        padding: var(--spacing-sm);
+    }
+    
+    .numbers-card__title {
+        font-size: var(--font-size-lg);
+        margin-bottom: var(--spacing-xs);
+    }
+    
+    .numbers-card__value {
+        font-size: var(--font-size-xxxxl);
+        line-height: 1.1;
+    }
+    
+    .numbers-card__icons {
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        margin-top: var(--spacing-sm);
+    }
+    
+    .grain-icon {
+        margin-right: var(--spacing-xs);
+        margin-bottom: var(--spacing-xs);
+    }
+    
+    .grain-icon img {
+        width: 20px;
+        height: 20px;
+    }
+    
+    .grain-icon span {
+        font-size: var(--font-size-xxs);
+    }
 } 
