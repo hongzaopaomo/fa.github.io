@@ -10,7 +10,7 @@
 
 .section-title {
     color: var(--color-primary);
-    font-size: var(--font-size-h1);
+    font-size: var(--font-size-h3);
     font-weight: 600;
     position: relative;
     line-height: 1.2;

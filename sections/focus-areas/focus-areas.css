@@ -14,14 +14,12 @@
     height: auto;
     padding-bottom: var(--spacing-xxxl);
     padding-top: var(--spacing-md);
-    padding-left: var(--spacing-xxl);
-    padding-right: var(--spacing-xxl);
     margin-bottom: 0;
 }
 
 /* 2. 标题区域布局 */
 .focus-areas-section .section-header {
-    padding-left: 0;
+    padding-left: var(--spacing-xxl);
 }
 
 
@@ -33,7 +31,6 @@
 
 /* 项目块样式 */
 .project-block {
-    background-color: var(--color-hero);
     margin-bottom: var(--spacing-xxl);
 }
 
@@ -41,43 +38,10 @@
     margin-bottom: 0;
 }
 
-/* 版块标题区域 */
-.block-header {
-    display: flex;
-    flex-direction: column;
-    text-align: left;
-    margin-left: var(--spacing-xxl);
-}
-
-.block-header__title {
-    font-family: var(--font-heading);
-    color: var(--color-text);
-    font-size: var(--font-size-h0);
-    font-weight: var(--font-weight-bold);
-    text-align: left;
-    margin-top: var(--spacing-xxl);
-    margin-bottom: var(--spacing-md);
-}
-
-.block-header__description {
-    font-family: var(--font-body);
-    font-size: var(--font-size-h4);
-    font-weight: var(--font-weight-regular);
-    color: var(--color-text);
-    max-width: 100%;
-    line-height: var(--line-height-relaxed);
-    margin: 0;
-    margin-bottom: var(--spacing-xl);
-    position: relative;
-    padding-left: 0;
-    text-align: left;
-}
-
 /* Agritech样式 */
 .agritech-card {
     display: block;
-    margin-top: var(--spacing-xl);
-    border-radius: var(--border-radius-lg);
+    margin-top: var(--spacing-xs);
     overflow: hidden;
     position: relative;
     min-height: 500px;
@@ -92,11 +56,16 @@
 .agritech-card__content {
     position: relative;
     z-index: 2;
-    background-color: var(--color-background);
+    background-color: rgba(255, 255, 255, 0.65);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px); /* Safari 支持 */
     border-radius: var(--border-radius-lg);
     padding: var(--spacing-xxxl);
     max-width: 600px;
-    margin: var(--spacing-xxl);
+    margin-top: var(--spacing-xxxl);
+    margin-left: var(--spacing-xxl);
+    margin-right: var(--spacing-xxl);
+    margin-bottom: var(--spacing-xl);
     box-shadow: var(--shadow-md);
     width: 35%;
 }
@@ -107,7 +76,7 @@
     font-size: var(--font-size-h4);
     font-weight: var(--font-weight-semibold);
     margin-top: 0;
-    margin-bottom: var(--spacing-xxl);
+    margin-bottom: var(--spacing-lg);
     line-height: var(--line-height-tight);
 }
 
@@ -140,8 +109,8 @@
 .agritech-card__stat-label {
     font-family: var(--font-body);
     font-size: var(--font-size-sm);
-    font-weight: var(--font-weight-medium);
-    color: var(--color-text);
+    font-weight: var(--font-weight-regular);
+    color: var(--color-text-light);
     opacity: 0.8;
     margin-bottom: var(--spacing-xs);
 }
@@ -159,21 +128,15 @@
     font-family: var(--font-body);
     font-size: var(--font-size-sm);
     font-weight: var(--font-weight-regular);
-    color: var(--color-text);
+    color: var(--color-text-light);
 }
 
 /* Agriedu 卡片容器 */
-.agriedu .cards-container {
-    display: grid;
-    gap: var(--spacing-xl);
-    margin-top: var(--spacing-xl);
-}
 
 /* Agriedu 卡片样式 - 调整为与Agritech卡片一致 */
 .agriedu-card {
     display: block;
-    margin-top: var(--spacing-xl);
-    border-radius: var(--border-radius-lg);
+    margin-top: var(--spacing-xs);
     overflow: hidden;
     position: relative;
     min-height: 500px;
@@ -185,19 +148,22 @@
 }
 
 
+
 .agriedu-card__content {
     position: relative;
     z-index: 2;
-    background-color: var(--color-background);
+    background-color: rgba(255, 255, 255, 0.65);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px); /* Safari 支持 */
     border-radius: var(--border-radius-lg);
     padding: var(--spacing-xxxl);
     max-width: 600px;
-    margin: var(--spacing-xxl);
+    margin-top: var(--spacing-xxxl);
+    margin-left: var(--spacing-xxl);
+    margin-right: var(--spacing-xxl);
+    margin-bottom: var(--spacing-xl);
     box-shadow: var(--shadow-md);
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    gap: var(--spacing-xl);
+    width: 35%;
 }
 
 .agriedu-card__title {
@@ -206,18 +172,10 @@
     font-size: var(--font-size-h4);
     font-weight: var(--font-weight-semibold);
     margin-top: 0;
-    margin-bottom: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
     line-height: var(--line-height-tight);
 }
 
-.agriedu-card__subtitle {
-    font-family: var(--font-body);
-    color: var(--color-text-light);
-    font-size: var(--font-size-md);
-    font-weight: var(--font-weight-regular);
-    margin-top: 0;
-    margin-bottom: var(--spacing-lg);
-}
 
 .agriedu-card__description {
     font-family: var(--font-body);
@@ -225,14 +183,9 @@
     font-size: var(--font-size-md);
     font-weight: var(--font-weight-regular);
     line-height: var(--line-height-relaxed);
-    margin: 0;
     margin-bottom: var(--spacing-lg);
-    opacity: 0.9;
 }
 
-.agriedu-card__image {
-    display: none; /* 隐藏原来的图片元素，因为我们将使用背景图片 */
-}
 
 /* 添加数据展示部分样式 - 与Agritech卡片统一 */
 .agriedu-card__stats {
@@ -355,19 +308,19 @@
 
 @media (max-width: 768px) {
     .focus-areas-section {
-        padding-left: var(--spacing-lg);
-        padding-right: var(--spacing-lg);
+        padding: var(--spacing-xl);
+        padding-left: 8px;
+        padding-right: 8px;
     }
     
     .focus-areas-section .section-header {
-        margin-top: var(--spacing-xl);
-        margin-bottom: var(--spacing-xl);
+        padding-left: var(--spacing-md);
+        margin-left: 8px;
+        margin-right: 8px;
     }
     
     .focus-areas-section .section-title {
-        font-size: var(--font-size-h3);
-        padding-left: var(--spacing-md);
-        letter-spacing: var(--letter-spacing-wide);
+        font-size: var(--font-size-h2);
     }
     
     .focus-areas-section .section-title::before {
@@ -381,8 +334,22 @@
         padding: var(--spacing-xl) var(--spacing-lg);
     }
 
+    .block-header {
+        margin-left: 8px;
+        margin-right: 8px;
+    }
+    
+    .block-header__title {
+        font-size: var(--font-size-h2);
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
     .block-header__description {
-        max-width: 100%;
+        font-size: var(--font-size-lg);
+        line-height: 1.5;
+        letter-spacing: -0.01em;
     }
 
     .cards-container {
@@ -397,10 +364,9 @@
 
     .agritech-card__content,
     .agriedu-card__content {
-        max-width: 100%;
-        width: calc(100% - var(--spacing-xl) * 2);
-        padding: var(--spacing-lg);
-        margin: var(--spacing-lg);
+        width: calc(100% - 16px);
+        margin-left: 8px;
+        margin-right: 8px;
     }
 
     .agritech-card__image,
@@ -408,12 +374,17 @@
         display: none;
     }
 
-    .agritech-card__title {
-        font-size: var(--font-size-h3);
+    .agritech-card__title,
+    .agriedu-card__title {
+        font-size: var(--font-size-h4);
+        margin-bottom: var(--spacing-md);
     }
 
-    .agritech-card__description {
-        font-size: var(--font-size-sm);
+    .agritech-card__description,
+    .agriedu-card__description {
+        font-size: var(--font-size-md);
+        line-height: 1.6;
+        margin-bottom: var(--spacing-md);
     }
 
     .agritech-card__stats {
@@ -432,11 +403,14 @@
     }
 
     .agriedu-card__title {
-        font-size: var(--font-size-h3);
+        font-size: var(--font-size-h4);
+        margin-bottom: var(--spacing-md);
     }
 
     .agriedu-card__description {
-        font-size: var(--font-size-sm);
+        font-size: var(--font-size-md);
+        line-height: 1.6;
+        margin-bottom: var(--spacing-md);
     }
 
     .agriedu-card__stats {
@@ -455,24 +429,30 @@
     }
 
     .project-block {
-        padding: var(--spacing-lg);
-        margin-bottom: var(--spacing-xxl);
+        padding: var(--spacing-md);
+        margin-bottom: var(--spacing-xl);
+        padding-left: 0;
+        padding-right: 0;
     }
 }
 
 @media (max-width: 480px) {
     .block-header {
         padding: var(--spacing-md);
+        margin-left: 8px;
+        margin-right: 8px;
     }
     
     .focus-areas-section {
-        padding-left: 16px;
-        padding-right: 16px;
+        padding-left: 8px;
+        padding-right: 8px;
     }
     
     .focus-areas-section .section-header {
         margin-top: var(--spacing-lg);
         margin-bottom: var(--spacing-lg);
+        margin-left: 8px;
+        margin-right: 8px;
     }
     
     .focus-areas-section .section-title {
@@ -492,11 +472,17 @@
     }
 
     .block-header__title {
-        font-size: var(--font-size-xl);
+        font-size: var(--font-size-h3);
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        margin-top: var(--spacing-lg);
     }
 
     .block-header__description {
         font-size: var(--font-size-md);
+        margin-bottom: var(--spacing-md);
+        line-height: 1.6;
     }
 
     .agritech-card__image,
@@ -506,10 +492,10 @@
 
     .agritech-card__content,
     .agriedu-card__content {
-        width: calc(100% - 32px);
+        width: calc(100% - 16px);
         padding: var(--spacing-md);
-        margin-left: 16px;
-        margin-right: 16px;
+        margin-left: 8px;
+        margin-right: 8px;
     }
 
     .agritech-card__stats,
@@ -520,6 +506,7 @@
     .agritech-card__stat-value,
     .agriedu-card__stat-value {
         font-size: var(--font-size-h4);
+        margin-bottom: 2px;
     }
 
     .learn-more-btn {
@@ -557,6 +544,7 @@
     .agritech-card__stat-label,
     .agriedu-card__stat-label {
         font-size: var(--font-size-xs);
+        margin-bottom: 2px;
     }
     
     .agritech-card__stat-description,
@@ -568,6 +556,29 @@
     .agriedu-card__description {
         font-size: var(--font-size-sm);
         margin-bottom: var(--spacing-sm);
+        line-height: 1.5;
+    }
+    
+    /* 增加列表项的可读性 */
+    .agritech-card__list,
+    .agriedu-card__list {
+        margin-left: var(--spacing-sm);
+        margin-bottom: var(--spacing-md);
+    }
+    
+    .agritech-card__list-item,
+    .agriedu-card__list-item {
+        margin-bottom: var(--spacing-xs);
+        position: relative;
+        padding-left: var(--spacing-sm);
+    }
+    
+    .agritech-card__list-item:before,
+    .agriedu-card__list-item:before {
+        content: "•";
+        position: absolute;
+        left: 0;
+        color: var(--color-primary);
     }
 }
 

@@ -34,6 +34,19 @@ document.addEventListener('keydown', (e) => {
     }
 });
 
+// 更新 hero section 中的 Contact Us 按钮链接
+document.querySelector('.hero__buttons .btn-primary').setAttribute('href', '#contact');
+
+// 处理Projects下拉菜单
+const projectsDropdownLink = document.querySelector('.nav-links__link.has-dropdown');
+if (projectsDropdownLink) {
+    projectsDropdownLink.addEventListener('click', (e) => {
+        // 阻止默认行为，不进行页面跳转
+        e.preventDefault();
+        // 点击时下拉菜单会通过CSS的hover效果显示
+    });
+}
+
 // 当前section指示器逻辑
 const sectionIndicator = document.querySelector('.current-section-indicator');
 const sectionIndicatorText = document.querySelector('.current-section-indicator__text');
@@ -45,6 +58,14 @@ let isIndicatorVisible = false;
 const handleScroll = () => {
     const currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
     const scrollingDown = currentScrollTop > lastScrollTop;
+    
+    // 导航栏滚动效果
+    const navLinks = document.querySelector('.nav-links-section');
+    if (currentScrollTop > 50) {
+        navLinks.classList.add('scrolled');
+    } else {
+        navLinks.classList.remove('scrolled');
+    }
     
     // 在移动端才显示指示器
     if (window.innerWidth <= 768) {
@@ -95,8 +116,8 @@ let lastScrollPosition = 0;
 const handleBackToTop = () => {
     const currentScrollPosition = window.pageYOffset || document.documentElement.scrollTop;
     
-    // 当滚动超过视口高度的 20% 时显示按钮
-    if (currentScrollPosition > window.innerHeight * 0.2) {
+    // 当滚动超过300px时显示按钮
+    if (currentScrollPosition > 300) {
         backToTopButton.classList.add('visible');
     } else {
         backToTopButton.classList.remove('visible');
@@ -173,6 +194,114 @@ document.addEventListener('keydown', (e) => {
     }
 });
 
+// 平滑滚动到锚点
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        // 如果是Projects下拉菜单链接，不阻止默认行为（前面已单独处理）
+        if (this.classList.contains('has-dropdown')) {
+            return;
+        }
+        
+        e.preventDefault();
+        
+        const targetId = this.getAttribute('href');
+        if (targetId === '#contact') {
+            // 显示联系我们弹窗
+            if (contactModal) contactModal.style.display = 'flex';
+            return;
+        }
+        
+        // 特殊处理各个链接的跳转
+        let targetElement = null;
+        let titleText = '';
+        
+        if (targetId === '#about-section') {
+            // 查找About标题
+            titleText = 'about us';
+            const sectionTitles = document.querySelectorAll('.section-title');
+            for (const title of sectionTitles) {
+                if (title.textContent.trim().toLowerCase() === titleText) {
+                    targetElement = title.closest('.section-header');
+                    break;
+                }
+            }
+        } else if (targetId === '#foundation-numbers-section') {
+            // 查找Foundation Numbers标题
+            titleText = 'Foundation Numbers';
+            const sectionTitles = document.querySelectorAll('.section-title');
+            for (const title of sectionTitles) {
+                if (title.textContent.trim() === titleText) {
+                    targetElement = title.closest('.section-header');
+                    break;
+                }
+            }
+        } else if (targetId === '#agritech-section') {
+            // 查找Agriculture Tech标题
+            titleText = 'Projects: Agriculture Tech';
+            const sectionTitles = document.querySelectorAll('.section-title');
+            for (const title of sectionTitles) {
+                if (title.textContent.trim() === titleText) {
+                    targetElement = title.closest('.section-header');
+                    break;
+                }
+            }
+        } else if (targetId === '#agriedu-section') {
+            // 查找Agriculture Edu标题
+            titleText = 'Projects: Agricultural Edu';
+            const sectionTitles = document.querySelectorAll('.section-title');
+            for (const title of sectionTitles) {
+                if (title.textContent.trim() === titleText) {
+                    targetElement = title.closest('.section-header');
+                    break;
+                }
+            }
+        } else {
+            // 其他链接正常处理
+            targetElement = document.querySelector(targetId);
+        }
+        
+        if (targetElement) {
+            // 关闭移动端菜单（如果打开）
+            if (sideMenu && sideMenu.classList.contains('active')) {
+                sideMenu.classList.remove('active');
+                document.body.classList.remove('no-scroll');
+                if (menuOverlay) menuOverlay.classList.remove('active');
+            }
+            
+            // 获取目标元素位置
+            const headerOffset = 80; // 导航栏高度 + 一些额外空间
+            const elementPosition = targetElement.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+            
+            // 滚动到目标位置
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: 'smooth'
+            });
+            
+            // 更新当前section指示器
+            if (sectionIndicator) {
+                let sectionName = '';
+                if (targetId === '#about-section') sectionName = 'About Us';
+                else if (targetId === '#focus-areas') sectionName = 'Projects';
+                else if (targetId === '#agritech-section') sectionName = 'Agriculture Tech';
+                else if (targetId === '#agriedu-section') sectionName = 'Agriculture Edu';
+                else if (targetId === '#foundation-numbers-section') sectionName = 'Our Foundation Numbers';
+                
+                if (sectionName) {
+                    if (sectionIndicatorText) sectionIndicatorText.textContent = sectionName;
+                    sectionIndicator.classList.add('visible');
+                    
+                    // 5秒后隐藏
+                    setTimeout(() => {
+                        sectionIndicator.classList.remove('visible');
+                    }, 5000);
+                }
+            }
+        }
+    });
+});
+
 // Foundation Numbers Cards Interaction
 function initFoundationNumbersCards() {
     const cards = document.querySelectorAll('.numbers-card');
@@ -215,8 +344,8 @@ function initFoundationNumbersCards() {
 
 // 初始化所有功能
 function initializeAll() {
-    // ... existing initialization code ...
     initFoundationNumbersCards();
+    // 其他可能的初始化函数调用可以放在这里
 }
 
 // 当 DOM 加载完成后初始化

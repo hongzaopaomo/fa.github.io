@@ -4,7 +4,7 @@
 .hero-section {
     width: 100%;
     position: relative;
-    height: 100vh; /* 视口全屏 */
+    height: var(--hero-height); /* 使用变量替代硬编码值 */
     padding: 0;
 }
 
@@ -14,7 +14,7 @@
 .hero__top {
     width: 100%;
     height: 152px;
-    padding: 18px 50px;
+    padding: var(--spacing-sm) var(--spacing-xxl);
     position: relative;
 }
 
@@ -35,7 +35,7 @@
 ========================== */
 .hero__main {
     width: 100%;
-    height: calc(100vh - 152px);
+    height: calc(var(--hero-height) - 152px);
     position: relative;
     overflow: hidden;
 }
@@ -77,7 +77,7 @@
     position: absolute;
     inset: 0;
     background: var(--color-overlay);
-    z-index: 2;
+    z-index: var(--z-normal);
 }
 
 .hero__content {
@@ -88,28 +88,29 @@
     padding: 0;
     text-align: center;
     color: var(--color-white);
-    z-index: 3;
+    z-index: var(--z-tooltip);
     width: 100%;
     box-sizing: border-box;
 }
 
 .hero__title {
     font-family: var(--font-heading);
-    font-size: clamp(3rem, 5vw, 3.5rem);
+    font-size: var(--font-size-h1);
     line-height: var(--line-height-tight);
     font-weight: var(--font-weight-bold);
     margin-bottom: var(--spacing-xl);
     max-width: 100%;
     word-wrap: break-word;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    text-shadow: var(--shadow-md);
     color: var(--color-white);
 }
 
 .hero__title-line {
     display: block;
     margin: 0 auto;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    text-shadow: var(--shadow-md);
 }
+
 
 /* ==========================
     🎯 5. 按钮样式
@@ -119,25 +120,26 @@
     justify-content: center;
     gap: var(--spacing-lg);
     flex-wrap: wrap;
-    margin-top: var(--spacing-xl);
+    margin-top: var(--spacing-xxxl);
 }
 
 .btn {
-    width: 160px;
+    width: 180px;
     padding: 0 var(--spacing-md);
     height: 64px;
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: var(--spacing-xs); /* 使用变量替代硬编码值 */
+    border-radius: var(--border-radius-md);
     font-family: var(--font-body);
-    font-size: var(--font-size-lg);
+    font-size: var(--font-size-md);
     font-weight: var(--font-weight-medium);
-    border-radius: var(--border-radius-sm);
-    transition: all var(--transition-medium);
+    transition: all var(--transition-fast);
 }
 
 .btn-primary {
-    background-color: var(--color-secondary);
+    background-color: var(--color-primary);
     color: var(--color-white);
 }
 
@@ -159,14 +161,14 @@
 ========================== */
 
 /* 🌟 平板 & 手机通用优化 */
-@media (max-width: 1024px) {
+@media (max-width: var(--breakpoint-lg)) { /* 替换为变量 */
     .hero__top {
         height: 90px;
-        padding: 12px var(--spacing-md);
+        padding: var(--spacing-xs) var(--spacing-md);
     }
 
     .hero__main {
-        height: calc(100vh - 90px);
+        height: calc(var(--hero-height) - 90px);
     }
 
     .logo__img {
@@ -174,7 +176,7 @@
     }
 
     .hero__title {
-        font-size: clamp(2.5rem, 4vw, 3rem);
+        font-size: var(--font-size-h2);
     }
 
     .btn {
@@ -189,51 +191,79 @@
 }
 
 /* 📱 小屏幕优化（手机） */
-@media (max-width: 768px) {
-    .btn {
-        padding: 0 var(--spacing-sm);
-        height: 50px;
-        font-size: var(--font-size-md);
-        width: 140px; /* 稍微减小按钮宽度 */
+@media (max-width: var(--breakpoint-sm)) { /* 替换为变量 */
+    .hero__top {
+        height: 120px;
+        padding: var(--spacing-md);
     }
-
-    .hero__content {
-        padding: 0 var(--spacing-xl);
+    
+    .hero__main {
+        height: calc(var(--hero-height) - 120px);
+    }
+    
+    .logo__img {
+        max-height: 90px;
+        min-width: 90px;
     }
     
     .hero__title {
-        font-size: clamp(2rem, 4vw, 2.5rem);
+        font-size: var(--font-size-h2);
+    }
+    
+    .hero__subtitle {
+        font-size: var(--font-size-md);
+        padding: 0 var(--spacing-lg);
+    }
+    
+    .btn {
+        width: 160px;
+        height: 56px;
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: var(--breakpoint-xs)) { /* 替换为变量 */
     .hero__top {
-        height: 70px;
-        padding: 10px var(--spacing-sm);
+        height: 100px;
+        padding: var(--spacing-sm);
     }
-
+    
     .hero__main {
-        height: calc(100vh - 70px);
+        height: calc(var(--hero-height) - 100px);
     }
-
+    
+    .logo__img {
+        max-height: 70px;
+        min-width: 70px;
+    }
+    
+    .menu-btn {
+        font-size: var(--font-size-h4); /* 替换硬编码值 */
+    }
+    
+    .hero__content {
+        padding: var(--spacing-lg);
+    }
+    
     .hero__title {
-        font-size: clamp(1.5rem, 4vw, 2rem);
-        margin-bottom: var(--spacing-lg);
+        font-size: var(--font-size-h3);
+        margin-bottom: var(--spacing-md);
     }
-
+    
+    .hero__subtitle {
+        font-size: var(--font-size-sm);
+        padding: 0;
+        margin-bottom: var(--spacing-md);
+    }
+    
     .hero__buttons {
         gap: var(--spacing-sm);
-        margin-top: var(--spacing-lg);
+        margin-top: var(--spacing-md);
     }
-
+    
     .btn {
-        width: 120px;
-        height: 40px;
+        width: 150px;
+        height: 50px;
+        min-height: 50px;
         font-size: var(--font-size-sm);
-        padding: 0 var(--spacing-sm);
-    }
-
-    .hero__content {
-        padding: 0 var(--spacing-md);
     }
 }

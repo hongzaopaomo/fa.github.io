@@ -81,7 +81,16 @@
     <section class="nav-links-section">
         <nav class="nav-links__container">
             <a href="#about-section" class="nav-links__link">About Us</a>
-            <a href="#focus-areas" class="nav-links__link">Projects</a>
+            
+            <!-- 添加Projects下拉菜单 -->
+            <div class="nav-links__item">
+                <a href="#focus-areas" class="nav-links__link has-dropdown">Projects</a>
+                <div class="nav-links__dropdown">
+                    <a href="#agritech-section" class="nav-links__dropdown-link">Agriculture Tech</a>
+                    <a href="#agriedu-section" class="nav-links__dropdown-link">Agriculture Edu</a>
+                </div>
+            </div>
+            
             <a href="#foundation-numbers-section" class="nav-links__link">Our Foundation Numbers</a>
         </nav>
     </section>
@@ -99,6 +108,8 @@
         <nav class="side-menu__links">
             <a href="#about-section" class="side-menu__link">About Us</a>
             <a href="#focus-areas-section" class="side-menu__link">Projects</a>
+            <a href="#agritech-section" class="side-menu__link side-menu__sublink">Agriculture Tech</a>
+            <a href="#agriedu-section" class="side-menu__link side-menu__sublink">Agriculture Edu</a>
             <a href="#foundation-numbers-section" class="side-menu__link">Our Foundation Numbers</a>
         </nav>
     </div>
@@ -134,8 +145,8 @@
                 <span class="hero__title-line">Prosper for All.</span>
             </h1>
             <div class="hero__buttons">
-                <a href="#contact" class="btn btn-primary">Contact Us</a>
-                <a href="#focus-areas" class="btn btn-outline">Our Solutions</a>
+                <a href="#contact" class="btn btn-primary">Contact Us <i class="fas fa-arrow-right"></i></a>
+                <a href="#focus-areas" class="btn btn-outline">Our Projects</a>
             </div>
         </div>
     </div>
@@ -189,27 +200,19 @@
     
         <!-- 文字介绍区域 -->
         <div class="about__content">
-            <p class="about__text about__text--large">Our Mission: enhance productivity, promote environmental conservation, and unlock global market opportunities for Nigerian farmers by integrating cutting-edge technology, sustainable practices, and inclusive financial models, with a focus on the cocoa and cassava value chains.</p>
-            <p class="about__text">FAAID, with 20 years of cross-industry experience in finance, manufacturing, and resources, leverages strategic partnerships with leading Chinese agricultural companies, research institutions, and global industry alliances to empower Nigerian agriculture.</p>
+            <p class="about__text">FAAID, with 20 years of cross-industry experience in finance, manufacturing, and resources, leverages strategic partnerships with leading Chinese agricultural companies, research institutions, and global industry alliances to empower Nigerian agriculture.Our Mission: enhance productivity, promote environmental conservation, and unlock global market opportunities for Nigerian farmers by integrating cutting-edge technology, sustainable practices, and inclusive financial models, with a focus on the cocoa and cassava value chains.</p>
         </div>
     </section> 
     
     <!-- Projects区域 -->
     <section class="focus-areas-section" id="focus-areas">
         <div class="section-header">
-            <h2 class="section-title">Projects</h2>
+            <h2 class="section-title">Projects: Agriculture Tech</h2>
         </div>
 
         <div class="focus-areas__projects">
             <!-- Agritech Block -->
-            <div class="project-block agritech">
-                <div class="block-header">
-                    <div class="block-header__content">
-                        <h3 class="block-header__title">Agriculture Tech Solutions</h3>
-                        <p class="block-header__description">Smart agriculture leverages technologies such as IoT, big data, and artificial intelligence to intelligently manage agricultural production, improving efficiency, optimizing resource use, and enhancing sustainability.</p>
-                    </div>
-                </div>
-
+            <div class="project-block agritech" id="agritech-section">
                 <div class="cards-container">
                     <div class="agritech-card" style="background-image: url('https://hongzaopaomo.github.io/fa.github.io/images/focus-areas/agritech/agritech1.jpg');">
                         <div class="agritech-card__content">
@@ -280,14 +283,10 @@
             </div>
 
             <!-- Agriedu Block -->
-            <div class="project-block agriedu">
-                <div class="block-header">
-                    <div class="block-header__content">
-                        <h3 class="block-header__title">Agricultural Education</h3>
-                        <p class="block-header__description">Agricultural education combines theoretical learning and practical application to equip farmers with modern farming techniques, sustainable practices, and business skills for improved productivity and market access.</p>
-                    </div>
-                </div>
-
+            <div class="section-header">
+                <h2 class="section-title">Projects: Agricultural Edu</h2>
+            </div>
+            <div class="project-block agriedu" id="agriedu-section">
                 <div class="cards-container">
                     <div class="agriedu-card" style="background-image: url('https://hongzaopaomo.github.io/fa.github.io/images/focus-areas/education/agriedu1.jpg');">
                         <div class="agriedu-card__content">
@@ -418,26 +417,24 @@
 
 <!-- Footer部分 -->
 <footer class="footer-section">
-    <!-- 顶部订阅区域 -->
-    <div class="footer__top">
-        <div class="footer__subscribe">
-            <h2 class="footer__subscribe-title">Subscribe to our newsletter</h2>
-            <div class="footer__subscribe-form">
-                <div class="footer__input-group">
-                    <div class="input-group">
-                        <input type="email" id="email" placeholder="Enter your email">
-                        <button class="btn-primary">Subscribe ↗</button>
-                    </div>
-                </div>
-                <p class="footer__subscribe-text">
-                    Receive all the latest on faaid solutions and benefits straight to your inbox.
-                </p>
-            </div>
-        </div>
-    </div>
-    
     <!-- 底部版权信息 -->
     <div class="footer__bottom">
+        <div class="footer__info">
+            <div class="footer__contact">
+                <h3 class="footer__heading">Contact Us</h3>
+                <p><i class="fas fa-envelope"></i> <a href="mailto:contact@faaid.org">contact@faaid.org</a></p>
+                <p><i class="fas fa-map-marker-alt"></i> FAAID Headquarters, Nigeria</p>
+            </div>
+            <div class="footer__social">
+                <h3 class="footer__heading">Follow Us</h3>
+                <div class="social-icons">
+                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                </div>
+            </div>
+        </div>
         <div class="footer__bottom-left">
             <span>© 2024 faaid By Foundation for African Agritech Inclusive Development Limited. All rights reserved.</span>
         </div>
@@ -476,10 +473,6 @@
     </div>
 </div>
 
-<script>
-// 更新 hero section 中的 Contact Us 按钮链接
-document.querySelector('.hero__buttons .btn-primary').setAttribute('href', '#contact');
-</script>
 </body>
 
 </html>

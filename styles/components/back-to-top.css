@@ -3,10 +3,10 @@
     position: fixed !important;  /* 确保位置固定 */
     right: 32px;
     bottom: 32px;
-    width: 48px;
-    height: 48px;
+    width: 72px;
+    height: 72px;
     border-radius: 50%;
-    background: var(--color-secondary);
+    background: var(--color-primary);
     color: #FFFFFF;
     border: none;
     cursor: pointer;
@@ -27,7 +27,7 @@
 }
 
 .back-to-top:hover {
-    background: var(--color-primary);
+    background: var(--color-secondary);
     transform: translateY(-4px);
     box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }

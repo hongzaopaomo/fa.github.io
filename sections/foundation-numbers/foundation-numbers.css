@@ -86,8 +86,8 @@
 /* 4. 数据卡片 */
 /* 基础样式 */
 .numbers-card {
-    background: var(--color-border);
-    border-radius: var(--border-radius-md);
+    background: var(--color-hero);
+    border-radius: var(--border-radius-lg);
     padding: var(--spacing-md);
     position: relative;
     overflow: hidden;
@@ -98,7 +98,7 @@
 .numbers-card--large {
     grid-column: span 1;
     grid-row: span 2;
-    background-color: var(--color-board-button);
+    background-color: var(--color-secondary);
 }
 
 /* 标题和数值 */
@@ -111,9 +111,9 @@
 
 .numbers-card__value {
     font-family: var(--font-heading);
-    font-size: var(--font-size-xxxxxl);
+    font-size: var(--font-size-h0);
     font-weight: var(--font-weight-bold);
-    color: var(--color-primary); 
+    color: var(--color-text); 
 }
 
 /* 谷物图标 */
@@ -128,7 +128,9 @@
     flex-direction: column;
     align-items: center;
     gap: var(--spacing-xs);
-    background-color: var(--color-background);
+    background-color: rgba(255, 255, 255, 0.65);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px); /* Safari 支持 */
     padding: var(--spacing-xs);
     border-radius: var(--border-radius-md);
     width: 88px;

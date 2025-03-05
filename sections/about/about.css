@@ -23,6 +23,7 @@
 /* 2. 标题区域布局 */
 .about-section .section-header {
     padding-left: 0;
+    background-color: var(--color-background);
 }
 
 /* 3. 图片展示区域 */
@@ -52,7 +53,7 @@
 
 /* 4. 内容区域 */
 .about__content {
-    padding-top: var(--spacing-xl);
+    padding-top: var(--spacing-xxl);
     width: 88.8%; /* 与图片区域宽度一致 */
     height: auto;
     min-height: 240px;
@@ -69,15 +70,6 @@
     color: var(--color-text);
     text-align: left;
     margin: 0;
-    text-align: justify
-}
-
-.about__text--large {
-    font-family: var(--font-body);
-    font-size: var(--font-size-xl);
-    font-weight: var(--font-weight-regular);
-    line-height: var(--line-height-relaxed);
-    margin-bottom: var(--spacing-md);
     text-align: justify
 }
 
