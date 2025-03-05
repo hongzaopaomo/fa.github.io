@@ -280,10 +280,10 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             // 获取目标元素的精确位置
             const elementPosition = targetElement.getBoundingClientRect().top;
             
-            // 考虑导航栏高度
-            const navHeight = 81; // nav-links-section的高度
+            // 考虑导航栏高度 - 仅在桌面端
+            const navHeight = window.innerWidth > 768 ? 81 : 0; // 仅在桌面端考虑nav-links-section的高度
             
-            // 计算偏移位置，减去导航栏高度，以避免内容被导航栏遮挡
+            // 计算偏移位置，在桌面端减去导航栏高度，以避免内容被导航栏遮挡
             const offsetPosition = elementPosition + window.pageYOffset - navHeight;
             
             // 滚动到目标位置
